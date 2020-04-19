@@ -30,10 +30,13 @@ func _process(delta):
 func _input(event):
 	if not is_music_press(event):
 		return
+		
+	var letter = keymap[event.scancode]
+	get_node("harp"+letter).play()
 
 	# is bad press?
 	if precision() == 0 or \
-	  sheet[get_nearest_step()%sheet.size()].find(keymap[event.scancode]) == -1:
+	  sheet[get_nearest_step()%sheet.size()].find(letter) == -1:
 		emit_signal("bad_note")
 
 func is_music_press(event):

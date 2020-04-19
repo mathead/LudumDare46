@@ -1,0 +1,14 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=2]
+
+[sub_resource type="AudioEffectDistortion" id=1]
+resource_name = "Distortion"
+
+[sub_resource type="AudioEffectCompressor" id=2]
+resource_name = "Compressor"
+release_ms = 20.0
+
+[resource]
+bus/0/effect/0/effect = SubResource( 1 )
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource( 2 )
+bus/0/effect/1/enabled = true

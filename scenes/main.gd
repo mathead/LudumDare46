@@ -10,6 +10,8 @@ onready var stands = [
 ]
 
 var knight = preload("res://scenes/knight.tscn")
+var good_note_effect = preload("res://scenes/good_note_effect.tscn")
+var bad_note_effect = preload("res://scenes/bad_note_effect.tscn")
 var width
 var height
 
@@ -17,6 +19,8 @@ func _ready():
 	width = get_viewport_rect().size.x
 	height = get_viewport_rect().size.y
 	generate_knights()
+	$Music.connect("good_note", self, "_on_good_note")
+	$Music.connect("bad_note", self, "_on_bad_note")
 
 func generate_knights():
 	var left_side = width/4
@@ -44,3 +48,13 @@ func generate_knights():
 		right_knight.position = Vector2(right_side,y)
 		right_knight.take_shield()
 		right_knight.turn_around()
+
+func _on_good_note(precision):
+	var effect = good_note_effect.instance()
+	effect.position = $Player.position
+	add_child(effect)
+	
+func _on_bad_note():
+	var effect = bad_note_effect.instance()
+	effect.position = $Player.position
+	add_child(effect)
