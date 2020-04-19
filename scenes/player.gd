@@ -5,6 +5,7 @@ var ACCELERATION = 2000
 var motion = Vector2.ZERO
 
 onready var sprites = [$Drum,$Harp,$Lute,$Trumpet,$Bagpipes]
+onready var cur_spr = $Drum
 
 func _physics_process(delta):
 	var axis = get_input_axis()
@@ -16,7 +17,13 @@ func _physics_process(delta):
 	
 func get_input_axis():
 	var axis = Vector2.ZERO
-	axis.x = int(Input.is_action_pressed("ui_right"))-int(Input.is_action_pressed("ui_left"))
+	var right = Input.is_action_pressed("ui_right")
+	var left = Input.is_action_pressed("ui_left")
+	if right:
+		cur_spr.flip_h = true
+	if left:
+		cur_spr.flip_h = false
+	axis.x = int(right)-int(left)
 	axis.y = int(Input.is_action_pressed("ui_down"))-int(Input.is_action_pressed("ui_up"))
 	return axis.normalized()
 
@@ -36,21 +43,21 @@ func _sprites_invisible():
 		spr.hide()
 	
 func take_drum():
-	_sprites_invisible()
-	sprites[0].show()
+	_change_spr(0)
 
 func take_harp():
-	_sprites_invisible()
-	sprites[1].show()
+	_change_spr(1)
 
 func take_lute():
-	_sprites_invisible()
-	sprites[2].show()
+	_change_spr(2)
 
 func take_trumpet():
-	_sprites_invisible()
-	sprites[3].show()
+	_change_spr(3)
 
 func take_bagpipes():
+	_change_spr(4)
+	
+func _change_spr(id):
 	_sprites_invisible()
-	sprites[4].show()
+	cur_spr = sprites[id]
+	sprites[id].show()
