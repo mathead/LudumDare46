@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/harpd.wav-9a6e5461c397ab394be2d028ca562e15.sample"
+
+[deps]
+
+source_file="res://sounds/harpd.wav"
+dest_files=[ "res://.import/harpd.wav-9a6e5461c397ab394be2d028ca562e15.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

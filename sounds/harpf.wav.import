@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/harpf.wav-c232ebfad604f632e99691b0d39718c4.sample"
+
+[deps]
+
+source_file="res://sounds/harpf.wav"
+dest_files=[ "res://.import/harpf.wav-c232ebfad604f632e99691b0d39718c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
