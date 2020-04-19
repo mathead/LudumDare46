@@ -16,9 +16,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Ludum Dare 47"
-run/main_scene="res://main.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/icon="res://icon.png"
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"
