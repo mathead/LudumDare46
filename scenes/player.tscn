@@ -1,14 +1,134 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=33 format=2]
 
-[ext_resource path="res://sprites/musician/drum/drum_temp.png" type="Texture" id=1]
+[ext_resource path="res://sprites/musician/drum/drum_idle.png" type="Texture" id=1]
 [ext_resource path="res://scenes/player.gd" type="Script" id=2]
-[ext_resource path="res://sprites/musician/harp/harp_temp.png" type="Texture" id=3]
-[ext_resource path="res://sprites/musician/trumpet/trumpet_temp.png" type="Texture" id=4]
-[ext_resource path="res://sprites/musician/bagpipes/bagpipes_temp.png" type="Texture" id=5]
-[ext_resource path="res://sprites/musician/lute/lute_temp.png" type="Texture" id=6]
+[ext_resource path="res://sprites/musician/harp/harp_idle.png" type="Texture" id=3]
+[ext_resource path="res://sprites/musician/trumpet/trumpet_idle.png" type="Texture" id=4]
+[ext_resource path="res://sprites/musician/lute/lute_idle.png" type="Texture" id=5]
+[ext_resource path="res://sprites/musician/bagpipes/bagpipes_idle.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 20, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 40, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 60, 30, 20 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 20, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 40, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 60, 30, 20 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 20, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 40, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 60, 30, 20 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 20, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 40, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 60, 30, 20 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 20, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 40, 30, 20 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 60, 30, 20 )
+
+[sub_resource type="SpriteFrames" id=26]
+animations = [ {
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -17,22 +137,36 @@ script = ExtResource( 2 )
 position = Vector2( 0, 7.24689 )
 shape = SubResource( 1 )
 
-[node name="Drum" type="Sprite" parent="."]
+[node name="Drum" type="AnimatedSprite" parent="."]
 position = Vector2( -1.94556, -0.932076 )
-texture = ExtResource( 1 )
+frames = SubResource( 6 )
+frame = 3
+playing = true
 
-[node name="Harp" type="Sprite" parent="."]
+[node name="Harp" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -1.889, -0.932076 )
-texture = ExtResource( 3 )
+frames = SubResource( 11 )
+frame = 1
+playing = true
 
-[node name="Lute" type="Sprite" parent="."]
+[node name="Lute" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -1.83244, -0.932076 )
-texture = ExtResource( 6 )
+frames = SubResource( 16 )
+frame = 2
+playing = true
 
-[node name="Trumpet" type="Sprite" parent="."]
+[node name="Trumpet" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -1.889, -0.932076 )
-texture = ExtResource( 4 )
+frames = SubResource( 21 )
+frame = 2
+playing = true
 
-[node name="Bagpipes" type="Sprite" parent="."]
+[node name="Bagpipes" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( -1.889, -0.932074 )
-texture = ExtResource( 5 )
+frames = SubResource( 26 )
+frame = 3
+playing = true
