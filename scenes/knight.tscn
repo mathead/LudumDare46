@@ -16,7 +16,6 @@ script = ExtResource( 5 )
 shape = SubResource( 1 )
 
 [node name="Bow" type="Sprite" parent="."]
-visible = false
 position = Vector2( -4.23606, -10.0448 )
 texture = ExtResource( 2 )
 
@@ -25,11 +24,9 @@ position = Vector2( -1.77873, -10.0463 )
 texture = ExtResource( 4 )
 
 [node name="Sword" type="Sprite" parent="."]
-visible = false
 position = Vector2( -5.78513, -10.0413 )
 texture = ExtResource( 3 )
 
 [node name="Spear" type="Sprite" parent="."]
-visible = false
 position = Vector2( -8.26175, -10.05 )
 texture = ExtResource( 1 )
