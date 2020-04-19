@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bow_temp.png-b522057130e066e8c35fc234f09e7c01.stex"
+path="res://.import/bow_idle.png-9511cc6affd7459fd8bb6dd9434c9515.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/knights/bow/bow_temp.png"
-dest_files=[ "res://.import/bow_temp.png-b522057130e066e8c35fc234f09e7c01.stex" ]
+source_file="res://sprites/knights/bow/bow_idle.png"
+dest_files=[ "res://.import/bow_idle.png-9511cc6affd7459fd8bb6dd9434c9515.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
