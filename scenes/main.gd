@@ -1,5 +1,14 @@
 extends Node2D
 
+var stands_path = "res://scenes/stands"
+onready var stands = [
+	load(stands_path+"/stand_harp.tscn"),
+	load(stands_path+"/stand_drum.tscn"),
+	load(stands_path+"/stand_bagpipes.tscn"),
+	load(stands_path+"/stand_lute.tscn"),
+	load(stands_path+"/stand_trumpet.tscn"),
+]
+
 var knight = preload("res://scenes/knight.tscn")
 var width
 var height
@@ -13,8 +22,17 @@ func generate_knights():
 	var left_side = width/4
 	var right_side = width/4*3
 	var music_line_height = 32
+	var usable_height = height-music_line_height
 	
-	for y in range(0,height-music_line_height,24):
+	var y = 0
+	var stands_num = len(stands)
+	for stand in stands:
+		y += usable_height/stands_num
+		var new_stand = stand.instance()
+		add_child(new_stand)
+		new_stand.position = Vector2(width/2,y)		
+		
+	for y in range(0,usable_height,24):
 		
 		var left_knight = knight.instance()
 		add_child(left_knight)
