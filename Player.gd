@@ -10,7 +10,6 @@ func _physics_process(delta):
 		apply_friction(0.0001,delta)
 	else:
 		apply_movement(axis*ACCELERATION*delta)
-	print(motion)
 	motion = move_and_slide(motion)
 	
 func get_input_axis():
