@@ -1,16 +1,33 @@
 extends Node2D
 
+var sheet
+var step = 0.0
+var steps_per_sec = 4
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+const NOTE = preload("res://scenes/note.tscn")
+const line_length = 12
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	load_sheet("a s d f as ad . . sf . . . . a s d f")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	var last_step = int(step)
+	step += steps_per_sec * delta
+	for i in range(last_step+line_length, int(step)+line_length):
+		create_notes(i%sheet.size())
+			
+func create_notes(step):
+	if sheet[step] == ".":
+		return
+	
+	for n in sheet[step]:
+		var note = NOTE.instance()
+		note.height = n
+		note.step = step
+		note.music = self
+		get_node(str(n)+"line").add_child(note)
+	
+func load_sheet(new_sheet):
+	sheet = new_sheet.split(" ")
+	for i in range(step, int(step)+line_length):
+		create_notes(i%sheet.size())
