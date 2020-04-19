@@ -14,13 +14,12 @@ func _input(event):
 	  and music.get_nearest_step() == step \
 	  and music.precision() != 0:
 		print("good", music.precision())
+		music.emit_signal("good_note", music.precision())
 		queue_free()
-		# TODO emit good
 
 func _process(delta):
 	var width = get_parent().texture.get_size().x
 	position.x = (float(step) - music.step) / music.line_length * width - width/2
 	if position.x < -width / 2 - 10:
-		# TODO bad note
-		print("missed")
+		music.emit_signal("bad_note")
 		queue_free()

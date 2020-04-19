@@ -5,6 +5,9 @@ var step = 0.0
 var steps_per_sec = 1
 var tolerance = 0.2
 
+signal bad_note
+signal good_note
+
 const NOTE = preload("res://scenes/note.tscn")
 const line_length = 12
 const keymap = {
@@ -31,9 +34,7 @@ func _input(event):
 	# is bad press?
 	if precision() == 0 or \
 	  sheet[get_nearest_step()%sheet.size()].find(keymap[event.scancode]) == -1:
-		pass
-		print("bad press")
-		# emit bad
+		emit_signal("bad_note")
 
 func is_music_press(event):
 	return event is InputEventKey \
@@ -68,3 +69,4 @@ func load_sheet(new_sheet):
 	sheet = new_sheet.split(" ")
 	for i in range(step, int(step)+line_length):
 		create_notes(i)
+
