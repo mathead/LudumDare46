@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
@@ -7,24 +7,22 @@
 [ext_resource path="res://scenes/goblins/goblin_normal_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/goblins/general_goblin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=8]
+[ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 23, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 46, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 69, 23, 23 )
 
@@ -50,10 +48,39 @@ _bundled = {
 "version": 2
 }
 
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 8.99915, 111.98 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 goblin_normal_1 = ExtResource( 5 )
 goblin_rider_2 = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 140.154, 89.4407 )
+z_index = -5
+texture = ExtResource( 8 )
+
+[node name="Coach" parent="." instance=ExtResource( 9 )]
+position = Vector2( 127.262, 7.54746 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 88.6058, 25.609, 117.186, 22.1721, 121.385, 25.4311, 125.96, 25.4938, 131.24, 23.0863, 150.5, 21.9463, 165.694, 22.2975, 199.725, 15.4662, 199.329, -7.85285, 79.5294, -8.08331 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 94.4671, 87.1119 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 189.329, 80.5385 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 146.173, 197.25 )
+rotation = 1.57146
+shape = SubResource( 7 )
 
 [node name="Cam" type="Camera2D" parent="."]
 offset = Vector2( 140, 105 )
@@ -61,7 +88,7 @@ current = true
 script = ExtResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 99.845, 104.711 )
+position = Vector2( 127.526, 106.612 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 184 )
