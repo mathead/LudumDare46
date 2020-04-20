@@ -11,14 +11,14 @@ script = ExtResource( 2 )
 
 [node name="Particles" type="CPUParticles2D" parent="."]
 emitting = false
-amount = 10
+amount = 30
 one_shot = true
 explosiveness = 1.0
 texture = ExtResource( 1 )
 direction = Vector2( 0, 0 )
 spread = 180.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 148.39
+initial_velocity = 84.0
 initial_velocity_random = 0.41
 angular_velocity = 720.0
 angular_velocity_random = 1.0

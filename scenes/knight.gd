@@ -9,6 +9,7 @@ var health = 100
 onready var dead_frames = load(knight_path + "/dead.tres")
 onready var ear_frames = load(knight_path + "/ears.tres")
 var weapons = ["shield","sword","spear","bow"]
+var listening = true
 
 func _ready():
 	add_to_group("Knights")
@@ -28,26 +29,44 @@ func get_weapon()->String:
 	return weapons[spr_offset]
 
 func take_shield():
-	spr.position.x = +3
 	spr_offset = 0
-	idle_anim()
+	if listening:
+		idle_anim()
 	
 func take_sword():
-	spr.position.x = -2
 	spr_offset = 1
-	idle_anim()
+	if listening:
+		idle_anim()
 	
 func take_spear():
-	spr.position.x = -5
 	spr_offset = 2
-	idle_anim()
+	if listening:
+		idle_anim()
 	
 func take_bow():
 	spr_offset = 3
-	spr.position.x = 0
+	if listening:
+		idle_anim()
+
+func dont_listen():
+	listening = false
+	spr.frames = ear_frames
+	spr.position.x = +3
+
+func listen_music():
+	listening = true
 	idle_anim()
 
 func idle_anim():
+	match(spr_offset):
+		0:
+			spr.position.x = +3
+		1:
+			spr.position.x = -2
+		2:
+			spr.position.x = -5
+		3:
+			spr.position.x = 0		
 	_change_anim(0)
 	
 func fight_anim():
@@ -56,10 +75,6 @@ func fight_anim():
 func dead_anim():
 	spr.frames = dead_frames
 	spr.position.x = 0
-	
-func ear_anim():
-	spr.frames = ear_frames
-	spr.position.x = +3
 	
 func heal():
 	health += 5

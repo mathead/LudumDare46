@@ -13,6 +13,7 @@ var motion = Vector2.ZERO
 
 onready var spr = $Sprite
 onready var sound_rad = $SoundRadius
+onready var change_rad = $ChangeRadius
 var spr_offset = 0
 var hitting = false
 
@@ -47,15 +48,7 @@ func _on_good_note(precision):
 	
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
-			match spr_offset:
-				0:
-					body.take_shield()
-				1:
-					body.take_sword()
-				3:
-					body.take_bow()
-				4:
-					body.take_spear()
+			body.listen_music()
 
 func _on_bad_note():
 	var effect = bad_note_effect.instance()
@@ -64,7 +57,7 @@ func _on_bad_note():
 	music_node.get_node("Shake").shake(0.3,100,0.5)
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
-			body.ear_anim()
+			body.dont_listen()
 			
 func _ready():
 	music_node.connect("bad_note", self, "_on_bad_note")
@@ -96,7 +89,18 @@ func _get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down"))-int(Input.is_action_pressed("ui_up"))
 	
 	if fight:
-		_anim_fight()
+		_anim_fight()		
+		for body in change_rad.get_overlapping_bodies():
+			if body.is_in_group("Knights"):
+				match spr_offset:
+					0:
+						body.take_shield()
+					1:
+						body.take_sword()
+					3:
+						body.take_bow()
+					4:
+						body.take_spear()
 	else:
 		if axis.length() > 0:
 			_anim_walk()
