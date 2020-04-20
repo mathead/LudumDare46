@@ -30,15 +30,21 @@ var height
 var difficulty = 1.0
 var music_line_height = 32
 var spawns = []
+var level = 0
+var last_level = 0
 
 func _process(delta):
 	time += delta
-	var level = level_generator.get_level()
+	last_level = level
+	level = level_generator.get_level()
+	if level > last_level:
+		time = 0
+	
 	var new_spawns = level_generator.get_goblin_spawns(time)
 	if not new_spawns.empty():
 		level_label.set_text("Level "+str(level))
 		for id in new_spawns:
-			spawn_goblin(id)
+			spawn_goblin(id*3+randi()%3)
 
 
 func _ready():

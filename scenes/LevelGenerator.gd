@@ -14,12 +14,12 @@ enum GOBLIN{
 var levels = [
 	{
 		0: [GOBLIN.normal],
-		2: [GOBLIN.normal,GOBLIN.rider]
+		2: [GOBLIN.rider,GOBLIN.rider]
 	},{
-		0: [GOBLIN.normal],
-		1: [GOBLIN.normal],
-		2: [GOBLIN.rider,GOBLIN.normal]
-	}
+		0: [GOBLIN.flyer],
+		10: [GOBLIN.flyer],
+		12: [GOBLIN.rider,GOBLIN.rider]
+	},
 ]
 
 func _ready():
