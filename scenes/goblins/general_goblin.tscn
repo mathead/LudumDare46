@@ -4,22 +4,18 @@
 [ext_resource path="res://scenes/goblins/general_goblin.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 18, 15 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 15, 18, 15 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 30, 18, 15 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 45, 18, 15 )
 
@@ -37,7 +33,7 @@ radius = 5.0
 [node name="Goblin" type="AnimatedSprite"]
 position = Vector2( -0.137591, -0.0520582 )
 frames = SubResource( 5 )
-frame = 3
+frame = 2
 playing = true
 offset = Vector2( 2, -8 )
 script = ExtResource( 2 )
