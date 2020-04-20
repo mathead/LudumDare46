@@ -3,7 +3,8 @@ extends Node2D
 var sheet
 var step = 0.0
 var steps_per_sec = 1
-var tolerance = 0.2
+var tolerance = 0.5
+var offset_correct_circle = 30
 
 signal bad_note
 signal good_note
@@ -19,7 +20,7 @@ const keymap = {
 
 func _ready():
 	set_process_input(true)
-	load_sheet(". . . . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf")
+	load_sheet("a a a . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf")
 
 func _process(delta):
 	var last_step = int(step)
