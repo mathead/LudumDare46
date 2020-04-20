@@ -4,8 +4,8 @@
 
 [node name="Goblin" instance=ExtResource( 1 )]
 frame = 0
-health = 1
-running_speed = 20.0
+health = 2
+running_speed = 7.0
 counter_weapon = "sword"
-knockback_amount = 3.0
-knockback_speed = 4.0
+knockback_amount = 4.5
+knockback_speed = 6.0
