@@ -33,8 +33,8 @@ func _process(delta):
 		"queued":
 			var width = get_parent().texture.get_size().x
 			var offset = music.offset_correct_circle - width/2 
-			position.x = (float(step) - music.step) / music.line_length * width + offset
-			if position.x < offset - width/music.line_length*music.tolerance:
+			position.x = (float(step) - music.step) / music.get_line_length() * width + offset
+			if position.x < offset - width/music.get_line_length()*music.get_tolerance():
 				music.emit_signal("bad_note")
 				music.play_bad_sound(key)
 				state = "bad_anim"
