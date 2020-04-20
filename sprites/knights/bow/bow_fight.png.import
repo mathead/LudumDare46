@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lute_fight.png-0dc6602c07a3e16b3c491cfb9c58bbd9.stex"
+path="res://.import/bow_fight.png-33a2083a7ae617e6886b1bac469e6a99.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/musician/lute/lute_fight.png"
-dest_files=[ "res://.import/lute_fight.png-0dc6602c07a3e16b3c491cfb9c58bbd9.stex" ]
+source_file="res://sprites/knights/bow/bow_fight.png"
+dest_files=[ "res://.import/bow_fight.png-33a2083a7ae617e6886b1bac469e6a99.stex" ]
 
 [params]
 

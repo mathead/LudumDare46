@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lute_fight.png-0dc6602c07a3e16b3c491cfb9c58bbd9.stex"
+path="res://.import/drum.png-e16158e6217e11da768d909e82cd211c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/musician/lute/lute_fight.png"
-dest_files=[ "res://.import/lute_fight.png-0dc6602c07a3e16b3c491cfb9c58bbd9.stex" ]
+source_file="res://sprites/stands/drum.png"
+dest_files=[ "res://.import/drum.png-e16158e6217e11da768d909e82cd211c.stex" ]
 
 [params]
 
