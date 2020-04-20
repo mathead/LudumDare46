@@ -22,6 +22,9 @@ func _process(delta):
 		"running":
 			speed_scale = 1
 			position += Vector2(1.0,0)*delta*running_speed*scale.x
+			# is in center?
+			if abs(position.x - 140) < 40:
+				state = "attack_queen"
 		"knockback":
 			speed_scale = 0
 			frame = 0
@@ -29,9 +32,16 @@ func _process(delta):
 			position += Vector2(-3*scale.x,-cos(knock_time))*delta*knockback_amount*knockback_multiplier
 			if knock_time > PI:
 				state = "running"
+		"attack_queen":
+			speed_scale = 1
+			position += Vector2(scale.x/2, -2) * delta * running_speed
+		"killing_queen":
+			speed_scale = 1
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Knights"):
 		if body.get_weapon() == counter_weapon:
 			knockback()
+	if body.is_in_group("queen"):
+		state = "killing_queen"
 

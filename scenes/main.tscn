@@ -11,18 +11,22 @@
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 23, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=3]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 46, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 69, 23, 23 )
 
@@ -66,9 +70,6 @@ position = Vector2( 127.262, 7.54746 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PoolVector2Array( 88.6058, 25.609, 117.186, 22.1721, 121.385, 25.4311, 125.96, 25.4938, 131.24, 23.0863, 150.5, 21.9463, 165.694, 22.2975, 199.725, 15.4662, 199.329, -7.85285, 79.5294, -8.08331 )
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 94.4671, 87.1119 )
 shape = SubResource( 7 )
@@ -81,6 +82,15 @@ shape = SubResource( 7 )
 position = Vector2( 146.173, 197.25 )
 rotation = 1.57146
 shape = SubResource( 7 )
+
+[node name="queen_collision" type="StaticBody2D" parent="." groups=[
+"queen",
+]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="queen_collision" groups=[
+"queen",
+]]
+polygon = PoolVector2Array( 88.6058, 25.609, 117.186, 22.1721, 121.385, 25.4311, 125.96, 25.4938, 131.24, 23.0863, 150.5, 21.9463, 165.694, 22.2975, 199.725, 15.4662, 199.329, -7.85285, 79.5294, -8.08331 )
 
 [node name="Cam" type="Camera2D" parent="."]
 offset = Vector2( 140, 105 )

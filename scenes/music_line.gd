@@ -3,7 +3,7 @@ extends Node2D
 var sheet
 var instrument = "drum"
 var step = 0.0
-var steps_per_sec = 0.9
+var steps_per_sec = 0.8
 var speedup = 0.0005
 var offset_correct_circle = 30
 var bad_sound = {
@@ -54,10 +54,10 @@ func _process(delta):
 	steps_per_sec *= 1 + speedup * delta
 	step += steps_per_sec * speed_multiplier[instrument] * delta
 	for i in range(last_step+get_line_length(), int(step)+get_line_length()):
-		$tick.volume_db = -20
-		if i % 4 == 0:
-			$tick.volume_db = -10
-		$tick.play()
+#		$tick.volume_db = -20
+#		if i % 4 == 0:
+#			$tick.volume_db = -10
+#		$tick.play()
 		create_notes(i)
 		
 	for key in "asdf":
@@ -83,7 +83,7 @@ func _on_instrument_change(inst):
 		for note in get_node(key+"line").get_children():
 			note.queue_free()
 	load_sheet(sheets[instrument])
-	step -= 1
+#	step -= 1
 
 func get_line_length():
 	return 12 * (speed_multiplier[instrument] / 2 + 0.5)
