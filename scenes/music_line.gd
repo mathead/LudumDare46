@@ -28,9 +28,9 @@ var speed_multiplier = {
 }
 var sheets = {
 	"harp": ". . . . a s d f as . ad . sf f f f a s d f f d s a . . . . a d s f d s f a ad . sf . af . sd . as . df . f d s a",
-	"bagpipes": ". . . . f . f . df d df d sf . df d af . df d f . f . df d df d sf . af . sf . af . s . a . s . a . sdf . adf . sdf d adf d f . f . asdf . asdf . df d df d f . f .",
+	"bagpipes": ". . . . . . . . d d d d s . d d a . d d . . . . d d d d s . a . s . a . s . a . s . a . sd . ad . sd d ad d . . . . asd . asd . d d d d . . . .",
 	"trumpet": ". . . . f . f . f f f f d d d d f d a . f d a . a . f . f d a . f f d d . s . s . . . . f d a .",
-	"drum": ". . . . . . . . . a . . . . . . . a . . . . . . . a . . . a . . . a . . . s . . . a . . . s . . . a . s . a . s . a . . . . . . . a . . a . . a . a . . . a . . . a s a s a . . . a . . . a . . . a . . a s . . a . . a s . . . .",
+	"drum": ". . . . . a . . . . . a . . . . . a . . . . . a . a . s . a . a . s . as",
 	"lute": ". . . . f . f . af . d d sf . sf . f . f . af d af d f . f . a d a d sf . f . a d a d sf . f ."
 }
 

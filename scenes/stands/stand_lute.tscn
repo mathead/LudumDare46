@@ -17,10 +17,4 @@ position = Vector2( 0, -11.4955 )
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" parent="StaticBody2D" index="0"]
-position = Vector2( -0.0944691, -6.6143 )
-
-[node name="Area2D" parent="." index="3"]
-position = Vector2( -0.128065, 1.53676 )
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 0.0713081, -8.24636 )
+position = Vector2( 0.211895, -3.72572 )
