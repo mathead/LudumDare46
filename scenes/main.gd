@@ -59,7 +59,7 @@ func _on_bad_note():
 	var effect = bad_note_effect.instance()
 	effect.position = $Player.position
 	add_child(effect)
-	$Music.get_node("Shake").shake(0.3,100,0.2)
+	$Music.get_node("Shake").shake(0.3,100,0.5)
 	
 
 

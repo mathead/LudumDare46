@@ -3,6 +3,7 @@ extends Node2D
 var sheet
 var step = 0.0
 var steps_per_sec = 1
+var speedup = 0.01
 var tolerance = 0.5
 var offset_correct_circle = 30
 var bad_sound = {
@@ -30,6 +31,7 @@ func _ready():
 
 func _process(delta):
 	var last_step = int(step)
+	steps_per_sec *= 1 + speedup * delta
 	step += steps_per_sec * delta
 	for i in range(last_step+line_length, int(step)+line_length):
 		create_notes(i)
