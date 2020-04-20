@@ -6,6 +6,7 @@ onready var spr = $Sprite
 var knight_path = "res://sprites/knights/"
 var spr_frames = []
 var spr_offset = 0
+var health = 100
 
 func _ready():
 	for weapon in ["shield","sword","spear","bow"]:
@@ -34,6 +35,9 @@ func idle_anim():
 	
 func fight_anim():
 	_change_anim(1)
+	
+func heal():
+	health += 5
 
 func _change_anim(offset):	
 	var frames = spr_frames[2*spr_offset+offset]
