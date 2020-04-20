@@ -62,4 +62,6 @@ func _on_Area2D_body_entered(body):
 				move_back()
 	if body.is_in_group("queen"):
 		state = "killing_queen"
+		Textbox.game_over = true
+		Textbox.show_text("The queen is dead. Game over!")
 
