@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://sprites/knights/spear/fight.tres" type="SpriteFrames" id=1]
+[ext_resource path="res://sprites/knights/shield/idle.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/knight.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
@@ -10,10 +10,10 @@ radius = 4.0
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -1.78992 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( -4.23606, -10.0448 )
+position = Vector2( 0, -10.045 )
 frames = ExtResource( 1 )
-frame = 1
 playing = true
