@@ -43,6 +43,7 @@ func _input(event):
 		return
 		
 	var letter = keymap[event.scancode]
+	get_node(str(letter)).scale = Vector2(1.5,1.5)
 	# is bad press?
 	if precision() == 0 or \
 	  sheet[get_nearest_step()%sheet.size()].find(letter) == -1:
