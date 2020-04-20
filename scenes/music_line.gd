@@ -1,7 +1,7 @@
 extends Node2D
 
 var sheet
-var instrument = "drum"
+var instrument = "harp"
 var step = 0.0
 var steps_per_sec = 0.9
 var speedup = 0.0005
@@ -17,18 +17,21 @@ var pitch_multiplier = {
 	"bagpipes": 0.73,
 	"trumpet": 0.9,
 	"drum": 1.0,
+	"lute": 0.8,
 }
 var speed_multiplier = {
 	"harp": 1.0,
 	"bagpipes": 1.0,
 	"trumpet": 1.0,
 	"drum": 3.0,
+	"lute": 1.0,
 }
 var sheets = {
-	"harp": ". . . . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf",
+	"harp": ". . . . a s d f as . ad . sf f f f a s d f f d s a . . . . a d s f d s f a ad . sf . af . sd . as . df . f d s a",
 	"bagpipes": ". . . . f . f . df d df d sf . df d af . df d f . f . df d df d sf . af . sf . af . s . a . s . a . sdf . adf . sdf d adf d f . f . asdf . asdf . df d df d f . f .",
 	"trumpet": ". . . . f . f . f f f f d d d d f d a . f d a . a . f . f d a . f f d d . s . s . . . . f d a .",
 	"drum": ". . . . . . . . . a . . . . . . . a . . . . . . . a . . . a . . . a . . . s . . . a . . . s . . . a . s . a . s . a . . . . . . . a . . a . . a . a . . . a . . . a s a s a . . . a . . . a . . . a . . a s . . a . . a s . . . .",
+	"lute": ". . . . f . f . af . d d sf . sf . f . f . af d af d f . f . a d a d sf . f . a d a d sf . f ."
 }
 
 signal bad_note

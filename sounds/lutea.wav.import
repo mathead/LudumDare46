@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/lutea.wav-4d21346d7b8076f6cc69e7782af222ec.sample"
+
+[deps]
+
+source_file="res://sounds/lutea.wav"
+dest_files=[ "res://.import/lutea.wav-4d21346d7b8076f6cc69e7782af222ec.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

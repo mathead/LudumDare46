@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -28,6 +28,10 @@
 [ext_resource path="res://sounds/druma.wav" type="AudioStream" id=26]
 [ext_resource path="res://sounds/drums.wav" type="AudioStream" id=27]
 [ext_resource path="res://sounds/Common Fight.ogg" type="AudioStream" id=28]
+[ext_resource path="res://sounds/luted.wav" type="AudioStream" id=29]
+[ext_resource path="res://sounds/lutes.wav" type="AudioStream" id=30]
+[ext_resource path="res://sounds/lutea.wav" type="AudioStream" id=31]
+[ext_resource path="res://sounds/lutef.wav" type="AudioStream" id=32]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 7.78454, -2.57286 )
@@ -119,6 +123,22 @@ volume_db = -10.0
 
 [node name="drumf" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 27 )
+volume_db = -10.0
+
+[node name="lutea" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 31 )
+volume_db = -10.0
+
+[node name="lutes" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 30 )
+volume_db = -10.0
+
+[node name="luted" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 29 )
+volume_db = -10.0
+
+[node name="lutef" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 32 )
 volume_db = -10.0
 
 [node name="Shake" type="Node" parent="."]
