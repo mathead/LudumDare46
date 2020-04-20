@@ -42,7 +42,7 @@ func _process(delta):
 	
 	var new_spawns = level_generator.get_goblin_spawns(time)
 	if not (new_spawns is Array) or new_spawns != []:
-		level_label.set_text("Level "+str(level))
+		level_label.set_text("Level "+str(level+1))
 		if new_spawns is int:
 			generate_stand(new_spawns, height-music_line_height-30)
 		elif new_spawns is String:
@@ -112,9 +112,25 @@ func spawn_goblin(id):
 	
 	if not new_goblin:
 		return
+		
+	# get free spawn
+	var spawn = null
+	for i in range(100):
+		var bad = false
+		var s = spawns[randi()%len(spawns)]
+		for child in get_children():
+			if "start_spawn" in child and child.start_spawn == s:
+				bad = true
+				break
+		if not bad:
+			spawn = s
+			break
+	if spawn == null:
+		spawn = spawns[randi()%len(spawns)]
 	
 	add_child(new_goblin)
-	new_goblin.position = spawns[randi()%len(spawns)]
+	new_goblin.position = spawn
+	new_goblin.start_spawn = spawn
 	if new_goblin.position.x > width:
 		new_goblin.turn_around()
 

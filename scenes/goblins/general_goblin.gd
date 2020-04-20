@@ -6,6 +6,7 @@ export(String, "shield","sword","spear","bow") var counter_weapon
 export var knockback_amount:float
 export var knockback_speed:float
 var hit_effect = preload("res://scenes/hit_effect.tscn")
+var start_spawn
 
 var knock_time = 0
 var knockback_multiplier = 5

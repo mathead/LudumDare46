@@ -92,7 +92,7 @@ func hit(damage):
 	add_child(hit_effect.instance())
 	health -= damage
 	if health < 0:
-		spr.frames = knocked_out
+		dead_anim()
 
 func _change_anim(offset):	
 	var frames = spr_frames[2*spr_offset+offset]
