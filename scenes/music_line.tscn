@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://sounds/lutes.wav" type="AudioStream" id=30]
 [ext_resource path="res://sounds/lutea.wav" type="AudioStream" id=31]
 [ext_resource path="res://sounds/lutef.wav" type="AudioStream" id=32]
+[ext_resource path="res://sounds/tick.wav" type="AudioStream" id=33]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 7.78454, -2.57286 )
@@ -167,3 +168,6 @@ script = ExtResource( 17 )
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 28 )
 volume_db = -24.233
+
+[node name="tick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 33 )

@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal instrument_change
+
 onready var music_node = get_node("/root/Main/Music")
 
 onready var good_note_effect = preload("res://scenes/good_note_effect.tscn")
@@ -20,18 +22,23 @@ var spr_frames = []
 
 func take_bagpipes():
 	spr_offset = 0
+	emit_signal("instrument_change", get_instrument())
 	
 func take_drum():
 	spr_offset = 1
+	emit_signal("instrument_change", get_instrument())
 	
 func take_harp():
 	spr_offset = 2
+	emit_signal("instrument_change", get_instrument())
 
 func take_lute():
 	spr_offset = 3
+	emit_signal("instrument_change", get_instrument())
 
 func take_trumpet():
 	spr_offset = 4
+	emit_signal("instrument_change", get_instrument())
 
 func _on_good_note(precision):
 	var effect = good_note_effect.instance()
@@ -62,6 +69,7 @@ func _on_bad_note():
 func _ready():
 	music_node.connect("bad_note", self, "_on_bad_note")
 	music_node.connect("good_note", self, "_on_good_note")
+	connect("instrument_change", music_node, "_on_instrument_change")
 	
 	for instr in instruments:
 		spr_frames.append(load(mus_path + instr + "/idle.tres"))

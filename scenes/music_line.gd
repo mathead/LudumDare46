@@ -1,7 +1,7 @@
 extends Node2D
 
 var sheet
-var instrument = "harp"
+var instrument = "drum"
 var step = 0.0
 var steps_per_sec = 0.9
 var speedup = 0.0005
@@ -54,6 +54,10 @@ func _process(delta):
 	steps_per_sec *= 1 + speedup * delta
 	step += steps_per_sec * speed_multiplier[instrument] * delta
 	for i in range(last_step+get_line_length(), int(step)+get_line_length()):
+		$tick.volume_db = -20
+		if i % 4 == 0:
+			$tick.volume_db = -10
+		$tick.play()
 		create_notes(i)
 		
 	for key in "asdf":
@@ -72,6 +76,14 @@ func _input(event):
 	  sheet[get_nearest_step()%sheet.size()].find(letter) == -1:
 		emit_signal("bad_note")
 		play_bad_sound(letter)
+
+func _on_instrument_change(inst):
+	instrument = inst
+	for key in "asdf":
+		for note in get_node(key+"line").get_children():
+			note.queue_free()
+	load_sheet(sheets[instrument])
+	step -= 1
 
 func get_line_length():
 	return 12 * (speed_multiplier[instrument] / 2 + 0.5)
