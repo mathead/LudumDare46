@@ -81,7 +81,6 @@ position = Vector2( 127.526, 106.612 )
 [node name="Music" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 184 )
 
-
 [node name="LevelLabel" type="Label" parent="."]
 margin_right = 40.0
 margin_bottom = 14.0

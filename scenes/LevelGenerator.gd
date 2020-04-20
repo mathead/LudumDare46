@@ -15,16 +15,16 @@ var levels = [
 	{
 		0: [GOBLIN.normal],
 		5: [GOBLIN.normal],
-		10: [GOBLIN.rider],
+		10: [GOBLIN.bomb],
 		15: [GOBLIN.normal],
-		20: [GOBLIN.rider],
-		25: [GOBLIN.rider],
+		20: [GOBLIN.bomb],
+		25: [GOBLIN.bomb],
 		30: [GOBLIN.normal],
 		35: [GOBLIN.normal],
-		40: [GOBLIN.rider],
-		45: [GOBLIN.rider],
+		40: [GOBLIN.bomb],
+		45: [GOBLIN.bomb],
 		50: [GOBLIN.normal],
-		55: [GOBLIN.rider],
+		55: [GOBLIN.bomb],
 		60: [GOBLIN.normal]
 	},{
 		0: [GOBLIN.flyer],
