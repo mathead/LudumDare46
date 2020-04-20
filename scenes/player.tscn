@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprites/musician/drum/idle.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/player.gd" type="Script" id=2]
@@ -8,6 +8,9 @@ radius = 2.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 30.0
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 16.0
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 20, 10 )
@@ -22,7 +25,6 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.94556, -0.932076 )
 frames = ExtResource( 1 )
-frame = 1
 playing = true
 
 [node name="SoundRadius" type="Area2D" parent="."]
@@ -30,6 +32,12 @@ priority = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SoundRadius"]
 shape = SubResource( 2 )
+
+[node name="InstrumentRadius" type="Area2D" parent="."]
+priority = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InstrumentRadius"]
+shape = SubResource( 4 )
 
 [node name="ChangeRadius" type="Area2D" parent="."]
 priority = 1.0

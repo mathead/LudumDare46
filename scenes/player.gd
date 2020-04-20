@@ -14,6 +14,7 @@ var motion = Vector2.ZERO
 onready var spr = $Sprite
 onready var sound_rad = $SoundRadius
 onready var change_rad = $ChangeRadius
+onready var instrument_rad = $InstrumentRadius
 var spr_offset = 0
 var hitting = false
 
@@ -89,6 +90,11 @@ func _get_input_axis():
 	axis.y = int(Input.is_action_pressed("ui_down"))-int(Input.is_action_pressed("ui_up"))
 	
 	if fight:
+		for body in instrument_rad.get_overlapping_bodies():
+			print(body.is_in_group("Stands"))
+			if body.is_in_group("Stands"):
+				body.change_players_instrument(self)
+		
 		_anim_fight()		
 		for body in change_rad.get_overlapping_bodies():
 			if body.is_in_group("Knights"):
