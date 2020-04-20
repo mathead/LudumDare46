@@ -1,14 +1,228 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=51 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
 [ext_resource path="res://scenes/main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/music_line.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/goblins/goblin_normal_1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=6]
+[ext_resource path="res://sprites/bg/no_idea_how_to_call_this.png" type="Texture" id=7]
+[ext_resource path="res://sprites/bg/horse_idle_2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/bg/coach.png" type="Texture" id=9]
+[ext_resource path="res://sprites/bg/queen.png" type="Texture" id=10]
+[ext_resource path="res://sprites/bg/horse_idle_1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/bg/horse_idle_3.png" type="Texture" id=12]
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 22, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 44, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 66, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 88, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 110, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 132, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 154, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 176, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 12 )
+region = Rect2( 0, 198, 27, 22 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 22, 27, 22 )
+
+[sub_resource type="SpriteFrames" id=18]
+animations = [ {
+"frames": [ SubResource( 16 ), SubResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 22, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 44, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 66, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 88, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 110, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 132, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 154, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 176, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 198, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 220, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 242, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 264, 27, 22 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 286, 27, 22 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "default",
+"speed": 2.0
+} ]
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 16, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 32, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 48, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 64, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 80, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 96, 20, 16 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 112, 20, 16 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 goblin_normal_1 = ExtResource( 5 )
+
+[node name="grass_bg" type="Sprite" parent="."]
+position = Vector2( 140.244, 89.5117 )
+texture = ExtResource( 6 )
+
+[node name="horse3" type="AnimatedSprite" parent="."]
+position = Vector2( -231.908, 57.5621 )
+frames = SubResource( 29 )
+frame = 6
+playing = true
+offset = Vector2( 386.876, -48.4529 )
+
+[node name="no_idea_how_to_call_this" type="Sprite" parent="."]
+position = Vector2( 158.101, 22.6476 )
+texture = ExtResource( 7 )
+
+[node name="coach" type="Sprite" parent="."]
+position = Vector2( 128.354, 18.2622 )
+texture = ExtResource( 9 )
+
+[node name="horse1" type="AnimatedSprite" parent="."]
+visible = false
+position = Vector2( -195.803, 63.4119 )
+frames = SubResource( 18 )
+playing = true
+offset = Vector2( 386.876, -48.4529 )
+
+[node name="horse2" type="AnimatedSprite" parent="."]
+position = Vector2( -227.347, 79.0444 )
+frames = SubResource( 15 )
+frame = 11
+playing = true
+offset = Vector2( 386.876, -48.4529 )
+
+[node name="queen" type="AnimatedSprite" parent="."]
+position = Vector2( -257.504, 82.9259 )
+frames = SubResource( 38 )
+playing = true
+offset = Vector2( 386.876, -48.4529 )
 
 [node name="Cam" type="Camera2D" parent="."]
 offset = Vector2( 140, 105 )
