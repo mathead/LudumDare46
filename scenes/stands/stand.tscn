@@ -4,10 +4,10 @@
 [ext_resource path="res://gfx/stand.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 8.0
+radius = 7.41603
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 20.0
+radius = 7.37222
 
 [node name="Stand" type="Node2D"]
 
