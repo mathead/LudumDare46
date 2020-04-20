@@ -21,7 +21,7 @@ onready var stands = [
 	load(stands_path+"/stand_lute.tscn"),
 	load(stands_path+"/stand_trumpet.tscn"),
 ]
-
+onready var level_label = $LevelLabel
 onready var level_generator = $LevelGenerator
 var time = 0
 var KNIGHT = preload("res://scenes/knight.tscn")
@@ -33,10 +33,12 @@ var spawns = []
 
 func _process(delta):
 	time += delta
+	var level = level_generator.get_level()
 	var new_spawns = level_generator.get_goblin_spawns(time)
 	if not new_spawns.empty():
-		print(new_spawns)
-		print("level: ",level_generator.get_level())
+		level_label.set_text("Level "+str(level))
+		for id in new_spawns:
+			spawn_goblin(id)
 
 
 func _ready():
