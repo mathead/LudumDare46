@@ -51,6 +51,10 @@ func take_bow():
 		idle_anim()
 
 func dont_listen():
+	if not Textbox.bad_music:
+		Textbox.bad_music = true
+		Textbox.show_text("I can't listen to this!!! If you play like this, I'll lose my guard.")
+
 	listening = false
 	spr.frames = ear_frames
 	spr.position.x = +3
@@ -68,7 +72,7 @@ func idle_anim():
 		2:
 			spr.position.x = -5
 		3:
-			spr.position.x = 0		
+			spr.position.x = 0
 	_change_anim(0)
 	
 func fight_anim():
@@ -82,9 +86,9 @@ func heal():
 	health += 5
 	
 func hit(damage):
-	if not Textbox.shown_shield:
+	if listening and not Textbox.shown_shield:
 		Textbox.shown_shield = true
-		Textbox.show_text("Aaaah! I do not have the correct weapon. Hit me with bagpipes to switch to a shield.")
+		Textbox.show_text("Aaaah! I do not have the correct weapon. Hit me with bagpipes using spacebar to switch to a shield.")
 	add_child(hit_effect.instance())
 	health -= damage
 	if health < 0:

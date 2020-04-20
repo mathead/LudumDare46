@@ -2,6 +2,7 @@ extends Node2D
 
 var shown_shield = false
 var game_over = false
+var bad_music = false
 
 func show_text(text):
 	visible = true
