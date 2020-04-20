@@ -20,38 +20,38 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.94556, -0.932076 )
 frames = ExtResource( 1 )
+frame = 2
 playing = true
 
 [node name="Drum" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.94556, -0.932076 )
 frames = ExtResource( 1 )
+frame = 3
 playing = true
 
 [node name="Harp" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.889, -0.932076 )
 frames = ExtResource( 5 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="Lute" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.83244, -0.932076 )
 frames = ExtResource( 6 )
-frame = 2
 playing = true
 
 [node name="Trumpet" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.889, -0.932076 )
 frames = ExtResource( 3 )
-frame = 2
 playing = true
 
 [node name="Bagpipes" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( -1.889, -0.932074 )
 frames = ExtResource( 4 )
-frame = 3
+frame = 1
 playing = true
