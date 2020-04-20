@@ -23,15 +23,15 @@ func _ready():
 	$Music.connect("bad_note", self, "_on_bad_note")
 	
 func generate_knights():
-	var left_side = width/4
-	var right_side = width/4*3
+	var left_side = width/3
+	var right_side = width/3*2
 	var music_line_height = 32
 	var usable_height = height-music_line_height
 	
 	var y = 0
 	var stands_num = len(stands)
 	for stand in stands:
-		y += usable_height/stands_num
+		y += (usable_height-14)/stands_num
 		var new_stand = stand.instance()
 		add_child(new_stand)
 		new_stand.position = Vector2(width/2,y)		
