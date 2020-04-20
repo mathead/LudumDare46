@@ -25,8 +25,10 @@ func knockback():
 		queue_free()
 	knock_time = 0
 	
-func move_back():
-	position.x -= scale.x * 20
+	
+func knockback_small():
+	knock_time = 0
+	state = "knockback_small"
 
 func _process(delta):
 	match(state):
@@ -36,6 +38,13 @@ func _process(delta):
 			# is in center?
 			if abs(position.x - 140) < 40:
 				state = "attack_queen"
+		"knockback_small":
+			speed_scale = 0
+			frame = 0
+			knock_time += delta
+			position += Vector2(-0.5*scale.x,0)*cos(knock_time)
+			if knock_time > PI/2:
+				state = "running"
 		"knockback":
 			speed_scale = 0
 			frame = 0
@@ -55,11 +64,11 @@ func _on_Area2D_body_entered(body):
 			if state != "knockback":
 				knockback()
 		elif body.get_weapon() == "shield":
-			move_back()
+			knockback_small()
 		else:
 			if body.health >= 0:
-				body.hit(10)
-				move_back()
+				body.hit(999)
+				knockback_small()
 	if body.is_in_group("queen"):
 		state = "killing_queen"
 
