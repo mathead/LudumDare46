@@ -7,6 +7,7 @@ var music
 func _ready():
 	_process(0)
 	set_process_input(true)
+	modulate = get_parent().get_color()
 	
 func _input(event):
 	if music.is_music_press(event) \

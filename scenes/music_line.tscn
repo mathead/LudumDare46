@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://sounds/harpf.wav" type="AudioStream" id=5]
 [ext_resource path="res://sounds/harps.wav" type="AudioStream" id=6]
 [ext_resource path="res://sprites/notes/bg.png" type="Texture" id=7]
+[ext_resource path="res://scenes/aline.gd" type="Script" id=8]
+[ext_resource path="res://scenes/sline.gd" type="Script" id=9]
+[ext_resource path="res://scenes/dline.gd" type="Script" id=10]
+[ext_resource path="res://scenes/fline.gd" type="Script" id=11]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,18 +22,22 @@ texture = ExtResource( 7 )
 [node name="aline" type="Sprite" parent="."]
 position = Vector2( 140, 0 )
 texture = ExtResource( 2 )
+script = ExtResource( 8 )
 
 [node name="sline" type="Sprite" parent="."]
 position = Vector2( 140, 7 )
 texture = ExtResource( 2 )
+script = ExtResource( 9 )
 
 [node name="dline" type="Sprite" parent="."]
 position = Vector2( 140, 14 )
 texture = ExtResource( 2 )
+script = ExtResource( 10 )
 
 [node name="fline" type="Sprite" parent="."]
 position = Vector2( 140, 21 )
 texture = ExtResource( 2 )
+script = ExtResource( 11 )
 
 [node name="harpa" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
