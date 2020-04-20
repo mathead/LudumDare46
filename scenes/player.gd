@@ -15,7 +15,7 @@ onready var spr = $Sprite
 onready var sound_rad = $SoundRadius
 onready var change_rad = $ChangeRadius
 onready var instrument_rad = $InstrumentRadius
-var spr_offset = 0
+var spr_offset = 1
 var hitting = false
 
 var mus_path = "res://sprites/musician/"
@@ -69,7 +69,7 @@ func _ready():
 		spr_frames.append(load(mus_path + instr + "/idle.tres"))
 		spr_frames.append(load(mus_path + instr + "/run.tres"))
 		spr_frames.append(load(mus_path + instr + "/fight.tres"))
-	take_bagpipes()
+	take_drum()
 
 func _physics_process(delta):
 	var axis = _get_input_axis()

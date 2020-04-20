@@ -82,6 +82,9 @@ func heal():
 	health += 5
 	
 func hit(damage):
+	if not Textbox.shown_shield:
+		Textbox.shown_shield = true
+		Textbox.show_text("Aaaah! I do not have the correct weapon. Hit me with bagpipes to switch to a shield.")
 	add_child(hit_effect.instance())
 	health -= damage
 	if health < 0:
