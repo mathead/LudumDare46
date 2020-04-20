@@ -1,13 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://scenes/stands/Area2D.gd" type="Script" id=1]
+[ext_resource path="res://scenes/stands/add_to_group.gd" type="Script" id=1]
 [ext_resource path="res://gfx/stand.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 7.41603
-
-[sub_resource type="CircleShape2D" id=2]
-radius = 7.37222
 
 [node name="Stand" type="Node2D"]
 
@@ -16,15 +13,10 @@ position = Vector2( 0.0944748, -11.2417 )
 texture = ExtResource( 2 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -0.0944672, -3.96767 )
 shape = SubResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="."]
-script = ExtResource( 1 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -0.0994415, -3.97759 )
-shape = SubResource( 2 )
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[node name="add_to_group" type="Node" parent="."]
