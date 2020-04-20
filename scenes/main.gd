@@ -112,9 +112,25 @@ func spawn_goblin(id):
 	
 	if not new_goblin:
 		return
+		
+	# get free spawn
+	var spawn = null
+	for i in range(100):
+		var bad = false
+		var s = spawns[randi()%len(spawns)]
+		for child in get_children():
+			if "start_spawn" in child and child.start_spawn == s:
+				bad = true
+				break
+		if not bad:
+			spawn = s
+			break
+	if spawn == null:
+		spawn = spawns[randi()%len(spawns)]
 	
 	add_child(new_goblin)
-	new_goblin.position = spawns[randi()%len(spawns)]
+	new_goblin.position = spawn
+	new_goblin.start_spawn = spawn
 	if new_goblin.position.x > width:
 		new_goblin.turn_around()
 
