@@ -43,17 +43,23 @@ func _input(event):
 		return
 		
 	var letter = keymap[event.scancode]
-	var sound = get_node("harp"+letter)
-	sound.pitch_scale = 1
-	sound.play()
-	bad_sound[letter] = false
-
 	# is bad press?
 	if precision() == 0 or \
 	  sheet[get_nearest_step()%sheet.size()].find(letter) == -1:
-		bad_sound[letter] = true
-		sound.pitch_scale += (randf() - 0.5) / 5
 		emit_signal("bad_note")
+		play_bad_sound(letter)
+		
+func play_good_sound(key):
+	var sound = get_node("harp"+key)
+	sound.pitch_scale = 1
+	bad_sound[key] = false
+	sound.play()
+
+func play_bad_sound(key):
+	var sound = get_node("harp"+key)
+	bad_sound[key] = true
+	sound.pitch_scale += (randf() - 0.5) / 5
+	sound.play()
 
 func is_music_press(event):
 	return event is InputEventKey \
