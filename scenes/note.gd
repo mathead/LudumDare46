@@ -6,8 +6,15 @@ var music
 var state = "queued"
 var anim_left = 1
 var dir
+var images = [
+	preload("res://sprites/notes/note_1.png"),
+	preload("res://sprites/notes/note_2.png"),
+	preload("res://sprites/notes/note_3.png"),
+	preload("res://sprites/notes/note_4.png"),
+	]
 
 func _ready():
+	$note.set_texture(images[rand_range(0, 4)])
 	_process(0)
 	set_process_input(true)
 	modulate = get_parent().get_color()

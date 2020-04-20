@@ -1,9 +1,9 @@
 extends Node2D
 
 var sheet
-var instrument = "trumpet"
+var instrument = "harp"
 var step = 0.0
-var steps_per_sec = 1
+var steps_per_sec = 0.9
 var speedup = 0.0005
 var tolerance = 0.5
 var offset_correct_circle = 30
@@ -13,15 +13,15 @@ var bad_sound = {
 	"d": false,
 	"f": false,
 }
-var speed_multiplier = {
+var pitch_multiplier = {
 	"harp": 1,
-	"bagpipes": 0.9,
-	"trumpet": 1.1,
+	"bagpipes": 0.73,
+	"trumpet": 0.9,
 }
 var sheets = {
-	"harp": "a a a . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf",
+	"harp": ". . . . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf",
 	"bagpipes": ". . . . f . f . df d df d sf . df d af . df d f . f . df d df d sf . af . sf . af . s . a . s . a . sdf . adf . sdf d adf d f . f . asdf . asdf . df d df d f . f .",
-	"trumpet": ". . . . f . f . f f f f d d d d f d a . f d a . a . f . f f d d s . s . s . . . f d a .",
+	"trumpet": ". . . . f . f . f f f f d d d d f d a . f d a . a . f . f d a . f f d d . s . s . . . . f d a .",
 }
 
 signal bad_note
@@ -43,7 +43,7 @@ func _ready():
 func _process(delta):
 	var last_step = int(step)
 	steps_per_sec *= 1 + speedup * delta
-	step += steps_per_sec * speed_multiplier[instrument] * delta
+	step += steps_per_sec * delta
 	for i in range(last_step+line_length, int(step)+line_length):
 		create_notes(i)
 		
@@ -64,7 +64,7 @@ func _input(event):
 		play_bad_sound(letter)
 		
 func get_pitch():
-	return 0.7 * steps_per_sec
+	return pitch_multiplier[instrument] * steps_per_sec
 		
 func play_good_sound(key):
 	var sound = get_node(instrument+key)
