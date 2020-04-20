@@ -11,4 +11,4 @@ script = ExtResource( 3 )
 position = Vector2( 99.845, 104.711 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
-position = Vector2( 0, 185 )
+position = Vector2( 0, 184 )
