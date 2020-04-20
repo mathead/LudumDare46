@@ -21,7 +21,7 @@ func _ready():
 	generate_knights()
 	$Music.connect("good_note", self, "_on_good_note")
 	$Music.connect("bad_note", self, "_on_bad_note")
-
+	
 func generate_knights():
 	var left_side = width/4
 	var right_side = width/4*3
@@ -50,6 +50,8 @@ func generate_knights():
 		right_knight.turn_around()
 
 func _on_good_note(precision):
+	
+	$Cam.shake(0.5,100,0.05)
 	var effect = good_note_effect.instance()
 	effect.position = $Player.position
 	add_child(effect)
@@ -58,3 +60,6 @@ func _on_bad_note():
 	var effect = bad_note_effect.instance()
 	effect.position = $Player.position
 	add_child(effect)
+	
+
+
