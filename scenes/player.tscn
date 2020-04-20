@@ -19,7 +19,6 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.94556, -0.932076 )
 frames = ExtResource( 1 )
-frame = 1
 playing = true
 
 [node name="SoundRadius" type="Area2D" parent="."]
