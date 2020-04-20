@@ -1,65 +1,43 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
 [ext_resource path="res://scenes/main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/music_line.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/goblins/goblin_normal_1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/goblins/general_goblin.tscn" type="PackedScene" id=6]
-[ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
+[ext_resource path="res://scenes/goblins/goblin_normal_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/goblins/goblin_normal_3.tscn" type="PackedScene" id=7]
 [ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=8]
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/Textbox.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/goblins/goblin_rider_2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/goblins/goblin_rider_3.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/goblins/goblin_flying_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/goblins/goblin_flying_2.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/goblins/goblin_flying_3.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/goblins/goblin_suicide_1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/goblins/goblin_rider_1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/goblins/goblin_suicide_3.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/goblins/goblin_suicide_2.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/LevelGenerator.gd" type="Script" id=20]
 
-[sub_resource type="AtlasTexture" id=1]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 0, 23, 23 )
-
-[sub_resource type="AtlasTexture" id=2]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 23, 23, 23 )
-
-[sub_resource type="AtlasTexture" id=3]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 46, 23, 23 )
-
-[sub_resource type="AtlasTexture" id=4]
-flags = 4
-atlas = ExtResource( 7 )
-region = Rect2( 0, 69, 23, 23 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="PackedScene" id=6]
-_bundled = {
-"base_scene": 0,
-"conn_count": 0,
-"conns": PoolIntArray(  ),
-"editable_instances": [  ],
-"names": PoolStringArray( "Goblin", "frames", "frame", "health", "running_speed", "counter_weapon", "knockback_amount" ),
-"node_count": 1,
-"node_paths": [  ],
-"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 6, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 0 ),
-"variants": [ ExtResource( 6 ), SubResource( 5 ), 0, 30, 10.0, 2, 2.0 ],
-"version": 2
-}
-
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.99915, 111.98 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 goblin_normal_1 = ExtResource( 5 )
-goblin_rider_2 = SubResource( 6 )
+goblin_normal_2 = ExtResource( 6 )
+goblin_normal_3 = ExtResource( 7 )
+goblin_rider_1 = ExtResource( 17 )
+goblin_rider_2 = ExtResource( 11 )
+goblin_rider_3 = ExtResource( 12 )
+goblin_flyer_1 = ExtResource( 13 )
+goblin_flyer_2 = ExtResource( 14 )
+goblin_flyer_3 = ExtResource( 15 )
+goblin_bomb_1 = ExtResource( 16 )
+goblin_bomb_2 = ExtResource( 19 )
+goblin_bomb_3 = ExtResource( 18 )
 
 [node name="Textbox" parent="." instance=ExtResource( 10 )]
 position = Vector2( 146, 176 )
@@ -76,16 +54,16 @@ position = Vector2( 127.262, 7.54746 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 94.4671, 87.3758 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 189.329, 80.5385 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 146.173, 197.25 )
 rotation = 1.57146
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="queen_collision" type="StaticBody2D" parent="." groups=[
 "queen",
@@ -106,3 +84,17 @@ position = Vector2( 127.526, 106.612 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 184 )
+
+[node name="Textbox" parent="." instance=ExtResource( 10 )]
+position = Vector2( 146, 176 )
+
+[node name="LevelLabel" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelGenerator" type="Node" parent="."]
+script = ExtResource( 20 )
