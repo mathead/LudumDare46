@@ -22,6 +22,7 @@ onready var stands = [
 	load(stands_path+"/stand_trumpet.tscn"),
 ]
 
+onready var level_generator = $LevelGenerator
 var time = 0
 var KNIGHT = preload("res://scenes/knight.tscn")
 var width
@@ -31,11 +32,13 @@ var music_line_height = 32
 var spawns = []
 
 func _process(delta):
-	time += delta*(0.5+randf()/2)
-	if time > 1.0/difficulty:
-		time = 0
-		spawn_goblin(0)
-	
+	time += delta
+	var new_spawns = level_generator.get_goblin_spawns(time)
+	if not new_spawns.empty():
+		print(new_spawns)
+		print("level: ",level_generator.get_level())
+
+
 func _ready():
 	width = get_viewport_rect().size.x
 	height = get_viewport_rect().size.y
@@ -98,7 +101,6 @@ func spawn_goblin(id):
 	
 	add_child(new_goblin)
 	new_goblin.position = spawns[randi()%len(spawns)]
-	print(new_goblin.position)
 	if new_goblin.position.x > width:
 		new_goblin.turn_around()
 
