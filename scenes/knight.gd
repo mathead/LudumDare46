@@ -7,13 +7,15 @@ var knight_path = "res://sprites/knights/"
 var spr_frames = []
 var spr_offset = 0
 var health = 100
+onready var dead_frames = load(knight_path + "/dead.tres")
+onready var ear_frames = load(knight_path + "/ears.tres")
 
 func _ready():
 	for weapon in ["shield","sword","spear","bow"]:
 		spr_frames.append(load(knight_path + weapon + "/idle.tres"))
 		spr_frames.append(load(knight_path + weapon + "/fight.tres"))
-	take_bow()
-	fight_anim()
+	dead_anim()
+	#fight_anim()
 
 func turn_around():
 	scale.x *= -1
@@ -35,6 +37,12 @@ func idle_anim():
 	
 func fight_anim():
 	_change_anim(1)
+	
+func dead_anim():
+	spr.frames = dead_frames
+	
+func ear_anim():
+	spr.frames = ear_frames
 	
 func heal():
 	health += 5
