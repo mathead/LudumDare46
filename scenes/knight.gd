@@ -2,12 +2,14 @@ extends StaticBody2D
 
 onready var spr = $Sprite
 
-var knight_path = "res://sprites/knights/"
+const knight_path = "res://sprites/knights/"
 var spr_frames = []
 var spr_offset = 0
 var health = 100
 onready var dead_frames = load(knight_path + "/dead.tres")
 onready var ear_frames = load(knight_path + "/ears.tres")
+var knocked_out = preload("res://sprites/knights/dead.tres")
+var hit_effect = preload("res://scenes/hit_effect.tscn")
 var weapons = ["shield","sword","spear","bow"]
 var listening = true
 
@@ -78,6 +80,12 @@ func dead_anim():
 	
 func heal():
 	health += 5
+	
+func hit(damage):
+	add_child(hit_effect.instance())
+	health -= damage
+	if health < 0:
+		spr.frames = knocked_out
 
 func _change_anim(offset):	
 	var frames = spr_frames[2*spr_offset+offset]
