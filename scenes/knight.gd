@@ -11,26 +11,31 @@ onready var dead_frames = load(knight_path + "/dead.tres")
 onready var ear_frames = load(knight_path + "/ears.tres")
 
 func _ready():
+	add_to_group("Knights")
 	for weapon in ["shield","sword","spear","bow"]:
 		spr_frames.append(load(knight_path + weapon + "/idle.tres"))
 		spr_frames.append(load(knight_path + weapon + "/fight.tres"))
-	dead_anim()
-	#fight_anim()
+
+	take_sword()
 
 func turn_around():
 	scale.x *= -1
 
 func take_shield():
 	spr_offset = 0
+	idle_anim()
 	
 func take_sword():
 	spr_offset = 1
+	idle_anim()
 	
 func take_spear():
 	spr_offset = 2
+	idle_anim()
 	
 func take_bow():
 	spr_offset = 3
+	idle_anim()
 
 func idle_anim():
 	_change_anim(0)
