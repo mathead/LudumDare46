@@ -41,10 +41,15 @@ func _process(delta):
 		time = 0
 	
 	var new_spawns = level_generator.get_goblin_spawns(time)
-	if not new_spawns.empty():
+	if not (new_spawns is Array) or new_spawns != []:
 		level_label.set_text("Level "+str(level))
-		for id in new_spawns:
-			spawn_goblin(id*3+randi()%3)
+		if new_spawns is int:
+			generate_stand(new_spawns, height-music_line_height-30)
+		elif new_spawns is String:
+			Textbox.show_text(new_spawns)
+		else:
+			for id in new_spawns:
+				spawn_goblin(id*3+randi()%3)
 
 
 func _ready():

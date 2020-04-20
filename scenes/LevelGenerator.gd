@@ -17,6 +17,9 @@ var levels = [
 		5: [GOBLIN.normal],
 		10: [GOBLIN.bomb],
 		15: [GOBLIN.normal],
+		16: "Look out, it's a bomber goblin!",
+		17: 2, # bagpipes
+		17.1: "You need to change you musical style againts those. Pick up the bagpipes using spacebar and hit my knights with them to pick up their shield.",
 		20: [GOBLIN.bomb],
 		25: [GOBLIN.bomb],
 		30: [GOBLIN.normal],
