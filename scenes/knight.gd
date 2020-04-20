@@ -1,28 +1,42 @@
 extends StaticBody2D
 
-onready var sprites = [$Bow,$Shield,$Sword,$Spear]
+onready var spr = $Sprite
+
+
+var knight_path = "res://sprites/knights/"
+var spr_frames = []
+var spr_offset = 0
+
+func _ready():
+	for weapon in ["shield","sword","spear","bow"]:
+		spr_frames.append(load(knight_path + weapon + "/idle.tres"))
+		spr_frames.append(load(knight_path + weapon + "/fight.tres"))
+	take_bow()
+	fight_anim()
 
 func turn_around():
 	scale.x *= -1
 
 func take_shield():
-	_sprites_invisible()
-	sprites[1].show()
+	spr_offset = 0
 	
 func take_sword():
-	_sprites_invisible()
-	sprites[2].show()
+	spr_offset = 1
 	
 func take_spear():
-	_sprites_invisible()
-	sprites[3].show()
+	spr_offset = 2
 	
 func take_bow():
-	_sprites_invisible()
-	sprites[0].show()
+	spr_offset = 3
 
-func _sprites_invisible():
-	for spr in sprites:
-		spr.hide()
-
+func idle_anim():
+	_change_anim(0)
 	
+func fight_anim():
+	_change_anim(1)
+
+func _change_anim(offset):	
+	var frames = spr_frames[2*spr_offset+offset]
+	if spr.frames != frames:
+		spr.frames = frames
+

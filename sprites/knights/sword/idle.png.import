@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bow_idle.png-9511cc6affd7459fd8bb6dd9434c9515.stex"
+path="res://.import/idle.png-643fad4ed1ba1b82fb21c434d474d3e5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/knights/bow/bow_idle.png"
-dest_files=[ "res://.import/bow_idle.png-9511cc6affd7459fd8bb6dd9434c9515.stex" ]
+source_file="res://sprites/knights/sword/idle.png"
+dest_files=[ "res://.import/idle.png-643fad4ed1ba1b82fb21c434d474d3e5.stex" ]
 
 [params]
 

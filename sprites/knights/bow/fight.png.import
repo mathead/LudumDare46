@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spear_idle.png-525e0605ccce4a027cbf4d79c0e2610a.stex"
+path="res://.import/fight.png-bc1b630b8a15a28707fb9f929272f8ac.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/knights/spear/spear_idle.png"
-dest_files=[ "res://.import/spear_idle.png-525e0605ccce4a027cbf4d79c0e2610a.stex" ]
+source_file="res://sprites/knights/bow/fight.png"
+dest_files=[ "res://.import/fight.png-bc1b630b8a15a28707fb9f929272f8ac.stex" ]
 
 [params]
 

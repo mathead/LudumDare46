@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bow_fight.png-33a2083a7ae617e6886b1bac469e6a99.stex"
+path="res://.import/fight.png-6027381c60fbb17441d393361cf54b8e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/knights/bow/bow_fight.png"
-dest_files=[ "res://.import/bow_fight.png-33a2083a7ae617e6886b1bac469e6a99.stex" ]
+source_file="res://sprites/knights/sword/fight.png"
+dest_files=[ "res://.import/fight.png-6027381c60fbb17441d393361cf54b8e.stex" ]
 
 [params]
 

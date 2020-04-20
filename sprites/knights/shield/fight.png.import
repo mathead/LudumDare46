@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/sword_idle.png-bb6b86e9a30b4beb7358cf609857b692.stex"
+path="res://.import/fight.png-564122e8a8e6159209536e8c1a7fb5ab.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/knights/sword/sword_idle.png"
-dest_files=[ "res://.import/sword_idle.png-bb6b86e9a30b4beb7358cf609857b692.stex" ]
+source_file="res://sprites/knights/shield/fight.png"
+dest_files=[ "res://.import/fight.png-564122e8a8e6159209536e8c1a7fb5ab.stex" ]
 
 [params]
 

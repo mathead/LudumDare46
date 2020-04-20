@@ -1,11 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://sprites/musician/drum/idle.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://scenes/player.gd" type="Script" id=2]
-[ext_resource path="res://sprites/musician/trumpet/idle.tres" type="SpriteFrames" id=3]
-[ext_resource path="res://sprites/musician/bagpipes/idle.tres" type="SpriteFrames" id=4]
-[ext_resource path="res://sprites/musician/harp/idle.tres" type="SpriteFrames" id=5]
-[ext_resource path="res://sprites/musician/lute/idle.tres" type="SpriteFrames" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 2.0
@@ -21,37 +17,4 @@ shape = SubResource( 1 )
 position = Vector2( -1.94556, -0.932076 )
 frames = ExtResource( 1 )
 frame = 2
-playing = true
-
-[node name="Drum" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -1.94556, -0.932076 )
-frames = ExtResource( 1 )
-frame = 3
-playing = true
-
-[node name="Harp" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -1.889, -0.932076 )
-frames = ExtResource( 5 )
-frame = 3
-playing = true
-
-[node name="Lute" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -1.83244, -0.932076 )
-frames = ExtResource( 6 )
-playing = true
-
-[node name="Trumpet" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -1.889, -0.932076 )
-frames = ExtResource( 3 )
-playing = true
-
-[node name="Bagpipes" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( -1.889, -0.932074 )
-frames = ExtResource( 4 )
-frame = 1
 playing = true
