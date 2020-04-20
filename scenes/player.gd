@@ -36,7 +36,7 @@ func take_trumpet():
 func _on_good_note(precision):
 	var effect = good_note_effect.instance()
 	effect.position = position
-	add_child(effect)
+	get_parent().add_child(effect)
 	
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
@@ -53,7 +53,7 @@ func _on_good_note(precision):
 func _on_bad_note():
 	var effect = bad_note_effect.instance()
 	effect.position = position
-	add_child(effect)
+	get_parent().add_child(effect)
 	music_node.get_node("Shake").shake(0.3,100,0.5)
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
