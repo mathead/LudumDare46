@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Common Fight.ogg-d4a3aa6d4d7777a03ddc5aed06d699fe.oggstr"
+
+[deps]
+
+source_file="res://sounds/Common Fight.ogg"
+dest_files=[ "res://.import/Common Fight.ogg-d4a3aa6d4d7777a03ddc5aed06d699fe.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

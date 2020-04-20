@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -25,6 +25,9 @@
 [ext_resource path="res://sounds/trumpetd.wav" type="AudioStream" id=23]
 [ext_resource path="res://sounds/trumpetf.wav" type="AudioStream" id=24]
 [ext_resource path="res://sounds/trumpets.wav" type="AudioStream" id=25]
+[ext_resource path="res://sounds/druma.wav" type="AudioStream" id=26]
+[ext_resource path="res://sounds/drums.wav" type="AudioStream" id=27]
+[ext_resource path="res://sounds/Common Fight.ogg" type="AudioStream" id=28]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 7.78454, -2.57286 )
@@ -102,6 +105,22 @@ volume_db = -10.0
 stream = ExtResource( 5 )
 volume_db = -10.0
 
+[node name="druma" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -10.0
+
+[node name="drums" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -10.0
+
+[node name="drumd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+volume_db = -10.0
+
+[node name="drumf" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+volume_db = -10.0
+
 [node name="Shake" type="Node" parent="."]
 script = ExtResource( 12 )
 
@@ -124,3 +143,7 @@ script = ExtResource( 17 )
 position = Vector2( 21.0146, 4.50652 )
 texture = ExtResource( 15 )
 script = ExtResource( 17 )
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )
+volume_db = -24.233
