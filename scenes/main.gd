@@ -57,6 +57,8 @@ func _ready():
 	generate_knights(height-music_line_height)
 	spawns = generate_goblin_spawns(height-music_line_height)
 	
+	Textbox.show_text("Help! Play music for my knights to keep me alive!")
+	
 func generate_goblin_spawns(height):
 	var left_side = -40
 	var right_side = width+40
