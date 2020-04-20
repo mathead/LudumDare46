@@ -4,22 +4,18 @@
 [ext_resource path="res://sprites/goblins/goblin_2.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 18, 18 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 18, 18, 18 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 36, 18, 18 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 54, 18, 18 )
 
@@ -28,14 +24,13 @@ animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 4.0
 } ]
 
 [node name="Goblin" instance=ExtResource( 1 )]
 frames = SubResource( 5 )
 frame = 1
-health = 2
-running_speed = 12.0
+running_speed = 6.0
 counter_weapon = "sword"
-knockback_amount = 2.5
-knockback_speed = 3.0
+knockback_amount = 1.5
+knockback_speed = 2.5
