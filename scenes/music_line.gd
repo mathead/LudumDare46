@@ -5,6 +5,12 @@ var step = 0.0
 var steps_per_sec = 1
 var tolerance = 0.5
 var offset_correct_circle = 30
+var bad_sound = {
+	"a": false,
+	"s": false,
+	"d": false,
+	"f": false,
+}
 
 signal bad_note
 signal good_note
@@ -28,16 +34,25 @@ func _process(delta):
 	for i in range(last_step+line_length, int(step)+line_length):
 		create_notes(i)
 		
+	for key in "asdf":
+		if bad_sound[key]:
+			get_node("harp"+key).pitch_scale -= delta * (randf() - 0.5) * 5
+		
 func _input(event):
 	if not is_music_press(event):
 		return
 		
 	var letter = keymap[event.scancode]
-	get_node("harp"+letter).play()
+	var sound = get_node("harp"+letter)
+	sound.pitch_scale = 1
+	sound.play()
+	bad_sound[letter] = false
 
 	# is bad press?
 	if precision() == 0 or \
 	  sheet[get_nearest_step()%sheet.size()].find(letter) == -1:
+		bad_sound[letter] = true
+		sound.pitch_scale += (randf() - 0.5) / 5
 		emit_signal("bad_note")
 
 func is_music_press(event):
