@@ -8,17 +8,24 @@ var spr_offset = 0
 var health = 100
 onready var dead_frames = load(knight_path + "/dead.tres")
 onready var ear_frames = load(knight_path + "/ears.tres")
+var weapons = ["shield","sword","spear","bow"]
 
 func _ready():
 	add_to_group("Knights")
-	for weapon in ["shield","sword","spear","bow"]:
+	for weapon in weapons:
 		spr_frames.append(load(knight_path + weapon + "/idle.tres"))
 		spr_frames.append(load(knight_path + weapon + "/fight.tres"))
-
 	take_sword()
 
 func turn_around():
 	scale.x *= -1
+
+func get_weapon()->String:
+	if spr.frames == dead_frames:
+		return "dead"
+	if spr.frames == ear_frames:
+		return "ears"
+	return weapons[spr_offset]
 
 func take_shield():
 	spr.position.x = +3

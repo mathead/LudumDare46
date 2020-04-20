@@ -38,9 +38,9 @@ playing = true
 offset = Vector2( 2, -8 )
 script = ExtResource( 2 )
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape" type="CollisionShape2D" parent="Area"]
 position = Vector2( -0.0356984, -3.4294 )
 shape = SubResource( 6 )
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area" to="." method="_on_Area2D_body_entered"]
