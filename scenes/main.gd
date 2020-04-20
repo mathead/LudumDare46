@@ -41,12 +41,10 @@ func generate_knights():
 		var left_knight = knight.instance()
 		add_child(left_knight)
 		left_knight.position = Vector2(left_side,y)
-		left_knight.take_shield()
 
 		var right_knight = knight.instance()
 		add_child(right_knight)
 		right_knight.position = Vector2(right_side,y)
-		right_knight.take_shield()
 		right_knight.turn_around()
 
 func _on_good_note(precision):
@@ -61,5 +59,3 @@ func _on_bad_note():
 	add_child(effect)
 	$Music.get_node("Shake").shake(0.3,100,0.5)
 	
-
-
