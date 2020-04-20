@@ -22,8 +22,5 @@ position = Vector2( 0, 184 )
 
 [node name="Goblin" parent="." instance=ExtResource( 5 )]
 position = Vector2( 17.1486, 105.826 )
-<<<<<<< HEAD
-=======
-frame = 3
->>>>>>> ccf91eaceee3c138fb9b039e84ec0a112b77d439
+frame = 0
 running_speed = 15.0
