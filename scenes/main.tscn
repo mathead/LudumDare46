@@ -11,22 +11,18 @@
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 23, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 46, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 69, 23, 23 )
 

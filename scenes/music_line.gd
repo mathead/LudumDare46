@@ -23,14 +23,14 @@ var speed_multiplier = {
 	"harp": 1.0,
 	"bagpipes": 1.0,
 	"trumpet": 1.0,
-	"drum": 3.0,
+	"drum": 2.0,
 	"lute": 1.0,
 }
 var sheets = {
 	"harp": ". . . . a s d f as . ad . sf f f f a s d f f d s a . . . . a d s f d s f a ad . sf . af . sd . as . df . f d s a",
-	"bagpipes": ". . . . . . . . d d d d s . d d a . d d . . . . d d d d s . a . s . a . s . a . s . a . sd . ad . sd d ad d . . . . asd . asd . d d d d . . . .",
-	"trumpet": ". . . . f . f . f f f f d d d d f d a . f d a . a . f . f d a . f f d d . s . s . . . . f d a .",
-	"drum": ". . . . . a . . . . . a . . . . . a . . . . . a . a . s . a . a . s . as",
+	"bagpipes": ". . d d d d s . d d a . d d . . d d d d s . a . s . a . s . a . s . a . sd . ad . sd d ad d . . d asd . asd . d d d d s . . ",
+	"trumpet": ". . . . . s . s . s . sf . sf . sd . sdf . d a . . . . . . f . f . f f d d f d a . a . ad . af . ad . adf . asdf . asdf",
+	"drum": ". . . . . a . . . . . a . . . . . a . . . . . a . a . s . a . a . s . a . . . . . a . . . . . a . . . . . as . . . . . a . . . . . s . a . s s a . s . a . s s a . s . a . s s a . s . a . s s a . . . . . a . . . . . a . . . . . a . . . . . a s a sa a s a as a s a sa a s a as",
 	"lute": ". . . . f . f . af . d d sf . sf . f . f . af d af d f . f . a d a d sf . f . a d a d sf . f ."
 }
 
