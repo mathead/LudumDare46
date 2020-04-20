@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/trumpetf.wav-1d79c9adc2749a0cb766ae5252a6ef78.sample"
+
+[deps]
+
+source_file="res://sounds/trumpetf.wav"
+dest_files=[ "res://.import/trumpetf.wav-1d79c9adc2749a0cb766ae5252a6ef78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

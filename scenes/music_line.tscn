@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -21,6 +21,10 @@
 [ext_resource path="res://sounds/bagpipesa.wav" type="AudioStream" id=19]
 [ext_resource path="res://sounds/bagpipesd.wav" type="AudioStream" id=20]
 [ext_resource path="res://sounds/bagpipesf.wav" type="AudioStream" id=21]
+[ext_resource path="res://sounds/trumpeta.wav" type="AudioStream" id=22]
+[ext_resource path="res://sounds/trumpetd.wav" type="AudioStream" id=23]
+[ext_resource path="res://sounds/trumpetf.wav" type="AudioStream" id=24]
+[ext_resource path="res://sounds/trumpets.wav" type="AudioStream" id=25]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 7.78454, -2.57286 )
@@ -64,6 +68,22 @@ volume_db = -10.0
 
 [node name="bagpipesf" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+volume_db = -10.0
+
+[node name="trumpeta" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+volume_db = -10.0
+
+[node name="trumpets" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+volume_db = -10.0
+
+[node name="trumpetd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+volume_db = -10.0
+
+[node name="trumpetf" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
 volume_db = -10.0
 
 [node name="harpa" type="AudioStreamPlayer" parent="."]
