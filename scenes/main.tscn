@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://scenes/goblins/goblin_normal_1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/goblins/general_goblin.tscn" type="PackedScene" id=6]
 [ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
-[ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=8]
+[ext_resource path="res://scenes/LevelGenerator.gd" type="Script" id=8]
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
 [ext_resource path="res://gfx/joystix monospace.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://sprites/notes/bubble.png" type="Texture" id=11]
+[ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 7 )
@@ -68,7 +69,6 @@ goblin_rider_2 = SubResource( 6 )
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 140.154, 89.4407 )
 z_index = -5
-texture = ExtResource( 8 )
 
 [node name="Coach" parent="." instance=ExtResource( 9 )]
 position = Vector2( 127.262, 7.54746 )
@@ -127,3 +127,14 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="LevelGenerator" type="Node" parent="."]
+script = ExtResource( 8 )
+
+[node name="grass_bg" type="Sprite" parent="."]
+position = Vector2( 139.296, 90.0602 )
+z_index = -5
+
+[node name="grass_bg" type="Sprite" parent="grass_bg"]
+position = Vector2( 1.73616, 0.545532 )
+texture = ExtResource( 12 )
