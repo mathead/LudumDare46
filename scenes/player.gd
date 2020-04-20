@@ -4,8 +4,19 @@ var MAX_SPEED = 90
 var ACCELERATION = 2000
 var motion = Vector2.ZERO
 
-onready var sprites = [$Drum,$Harp,$Lute,$Trumpet,$Bagpipes]
-onready var cur_spr = $Drum
+onready var spr = $Sprite
+var spr_offset = 0
+var hitting = false
+
+var mus_path = "res://sprites/musician/"
+var spr_frames = []
+
+func _ready():
+	for instr in ["bagpipes","drum","harp","lute","trumpet"]:
+		spr_frames.append(load(mus_path + instr + "/idle.tres"))
+		spr_frames.append(load(mus_path + instr + "/run.tres"))
+		spr_frames.append(load(mus_path + instr + "/fight.tres"))
+	take_bagpipes()
 
 func _physics_process(delta):
 	var axis = get_input_axis()
@@ -17,14 +28,27 @@ func _physics_process(delta):
 	
 func get_input_axis():
 	var axis = Vector2.ZERO
+	
+	var fight = Input.is_action_pressed("ui_fight")
 	var right = Input.is_action_pressed("ui_right")
 	var left = Input.is_action_pressed("ui_left")
-	if right:
-		cur_spr.flip_h = true
-	if left:
-		cur_spr.flip_h = false
+	
 	axis.x = int(right)-int(left)
 	axis.y = int(Input.is_action_pressed("ui_down"))-int(Input.is_action_pressed("ui_up"))
+	
+	if fight:
+		_anim_fight()
+	else:
+		if axis.length() > 0:
+			_anim_walk()
+		else:
+			_anim_idle()
+	
+	if right:
+		spr.flip_h = true
+	if left:
+		spr.flip_h = false		
+	
 	return axis.normalized()
 
 
@@ -38,26 +62,32 @@ func apply_movement(acceleration):
 	motion += acceleration
 	motion = motion.clamped(MAX_SPEED)
 	
-func _sprites_invisible():
-	for spr in sprites:
-		spr.hide()
+func take_bagpipes():
+	spr_offset = 0
 	
 func take_drum():
-	_change_spr(0)
-
+	spr_offset = 1
+	
 func take_harp():
-	_change_spr(1)
+	spr_offset = 2
 
 func take_lute():
-	_change_spr(2)
+	spr_offset = 3
 
 func take_trumpet():
-	_change_spr(3)
+	spr_offset = 4
 
-func take_bagpipes():
-	_change_spr(4)
 	
-func _change_spr(id):
-	_sprites_invisible()
-	cur_spr = sprites[id]
-	sprites[id].show()
+func _anim_idle():
+	_change_anim(0)
+	
+func _anim_walk():
+	_change_anim(1)
+	
+func _anim_fight():
+	_change_anim(2)
+	
+func _change_anim(offset):	
+	var frames = spr_frames[3*spr_offset+offset]
+	if spr.frames != frames:
+		spr.frames = frames
