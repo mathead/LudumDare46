@@ -11,4 +11,12 @@ script = ExtResource( 3 )
 position = Vector2( 99.845, 104.711 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
+<<<<<<< HEAD
+position = Vector2( 0, 184 )
+
+[node name="Coach" parent="." instance=ExtResource( 2 )]
+position = Vector2( 105.392, 9.19386 )
+z_index = -5
+=======
 position = Vector2( 0, 185 )
+>>>>>>> feab96ea71e4545576efd7d623455c0258c4ac2f
