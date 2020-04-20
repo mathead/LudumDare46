@@ -1,10 +1,11 @@
 extends AnimatedSprite
 
-export var health:int
+export var health:int = 3
 export var running_speed:float
 export(String, "shield","sword","spear","bow") var counter_weapon
 export var knockback_amount:float
 export var knockback_speed:float
+var hit_effect = preload("res://scenes/hit_effect.tscn")
 
 var knock_time = 0
 var knockback_multiplier = 5
@@ -15,7 +16,17 @@ func turn_around():
 
 func knockback():
 	state = "knockback"
+	add_child(hit_effect.instance())
+	health -= 1
+	if health <= 0:
+		var ef = hit_effect.instance()
+		ef.position = position
+		get_parent().add_child(ef)
+		queue_free()
 	knock_time = 0
+	
+func move_back():
+	position.x -= scale.x * 20
 
 func _process(delta):
 	match(state):
@@ -41,7 +52,14 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Knights"):
 		if body.get_weapon() == counter_weapon:
-			knockback()
+			if state != "knockback":
+				knockback()
+		elif body.get_weapon() == "shield":
+			move_back()
+		else:
+			if body.health >= 0:
+				body.hit(10)
+				move_back()
 	if body.is_in_group("queen"):
 		state = "killing_queen"
 

@@ -86,7 +86,7 @@ shape = SubResource( 7 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="queen_collision" groups=[
 "queen",
 ]]
-polygon = PoolVector2Array( 88.6058, 25.609, 117.186, 22.1721, 121.385, 25.4311, 125.96, 25.4938, 131.24, 23.0863, 150.5, 21.9463, 165.694, 22.2975, 199.725, 15.4662, 199.329, -7.85285, 79.5294, -8.08331 )
+polygon = PoolVector2Array( 99.8165, 25.9726, 117.186, 22.1721, 121.385, 25.4311, 125.96, 25.4938, 131.24, 23.0863, 150.5, 21.9463, 165.694, 22.2975, 184.938, 18.4151, 184.142, -8.63274, 98.0265, -7.83722 )
 
 [node name="Cam" type="Camera2D" parent="."]
 offset = Vector2( 140, 105 )
