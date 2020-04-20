@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=8]
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gfx/joystix monospace.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -54,6 +55,13 @@ _bundled = {
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 8.99915, 111.98 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 10 )
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
@@ -102,3 +110,19 @@ position = Vector2( 127.526, 106.612 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 184 )
+
+[node name="Textbox" type="Node2D" parent="."]
+position = Vector2( 124, 33.8295 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="Textbox"]
+margin_left = -32.3481
+margin_top = -7.68507
+margin_right = 111.652
+margin_bottom = 28.3149
+custom_fonts/font = SubResource( 8 )
+text = "asdfasdf
+sdfgfdgfdgnfbfgbfg"
+__meta__ = {
+"_edit_use_anchors_": false
+}
