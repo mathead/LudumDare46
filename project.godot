@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="Ludum Dare 47"
 run/main_scene="res://scenes/main.tscn"
 
+[autoload]
+
+Textbox="*res://scenes/Textbox.tscn"
+
 [display]
 
 window/size/width=280

@@ -53,9 +53,11 @@ func _ready():
 	
 	randomize()
 	
-	generate_stands(height-music_line_height-14)
+	generate_stand(1, height-music_line_height-30)
 	generate_knights(height-music_line_height)
 	spawns = generate_goblin_spawns(height-music_line_height)
+	
+	Textbox.show_text("Help! Beat that drum for my knights to keep me alive!")
 	
 func generate_goblin_spawns(height):
 	var left_side = -40
@@ -67,14 +69,13 @@ func generate_goblin_spawns(height):
 			spawns.append(Vector2(side,y))
 	return spawns
 	
-func generate_stands(height):
-	var y = 0
+func generate_stand(index, height):
+	var y = 20
 	var stands_num = len(stands)
-	for stand in stands:
-		y += height/stands_num
-		var new_stand = stand.instance()
-		add_child(new_stand)
-		new_stand.position = Vector2(width/2,y)
+	y += height/stands_num*(index+1)
+	var new_stand = stands[index].instance()
+	add_child(new_stand)
+	new_stand.position = Vector2(width/2,y)
 
 func spawn_goblin(id):
 	var new_goblin
