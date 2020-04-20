@@ -30,7 +30,8 @@ animations = [ {
 [node name="Goblin" instance=ExtResource( 1 )]
 frames = SubResource( 5 )
 frame = 1
-running_speed = 6.0
+offset = Vector2( 2, -9 )
+running_speed = 7.0
 counter_weapon = "sword"
-knockback_amount = 1.5
-knockback_speed = 2.5
+knockback_amount = 3.5
+knockback_speed = 5.5

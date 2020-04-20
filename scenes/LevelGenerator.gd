@@ -14,7 +14,18 @@ enum GOBLIN{
 var levels = [
 	{
 		0: [GOBLIN.normal],
-		2: [GOBLIN.rider,GOBLIN.rider]
+		5: [GOBLIN.normal],
+		10: [GOBLIN.rider],
+		15: [GOBLIN.normal],
+		20: [GOBLIN.rider],
+		25: [GOBLIN.rider],
+		30: [GOBLIN.normal],
+		35: [GOBLIN.normal],
+		40: [GOBLIN.rider],
+		45: [GOBLIN.rider],
+		50: [GOBLIN.normal],
+		55: [GOBLIN.rider],
+		60: [GOBLIN.normal]
 	},{
 		0: [GOBLIN.flyer],
 		10: [GOBLIN.flyer],
