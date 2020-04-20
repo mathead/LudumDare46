@@ -1,5 +1,18 @@
 extends Node2D
 
+export(PackedScene) var goblin_normal_1
+export(PackedScene) var goblin_normal_2
+export(PackedScene) var goblin_normal_3
+export(PackedScene) var goblin_rider_1
+export(PackedScene) var goblin_rider_2
+export(PackedScene) var goblin_rider_3
+export(PackedScene) var goblin_flyer_1
+export(PackedScene) var goblin_flyer_2
+export(PackedScene) var goblin_flyer_3
+export(PackedScene) var goblin_bomb_1
+export(PackedScene) var goblin_bomb_2
+export(PackedScene) var goblin_bomb_3
+
 var stands_path = "res://scenes/stands"
 onready var stands = [
 	load(stands_path+"/stand_harp.tscn"),
@@ -10,7 +23,6 @@ onready var stands = [
 ]
 
 var time = 0
-var GOBLIN = preload("res://scenes/goblin.tscn")
 var KNIGHT = preload("res://scenes/knight.tscn")
 var width
 var height
@@ -22,7 +34,7 @@ func _process(delta):
 	time += delta*(0.5+randf()/2)
 	if time > 1.0/difficulty:
 		time = 0
-		spawn_goblin()
+		spawn_goblin(0)
 	
 func _ready():
 	width = get_viewport_rect().size.x
@@ -53,8 +65,37 @@ func generate_stands(height):
 		add_child(new_stand)
 		new_stand.position = Vector2(width/2,y)
 
-func spawn_goblin():
-	var new_goblin = GOBLIN.instance()
+func spawn_goblin(id):
+	var new_goblin
+	match(id):
+		0:
+			new_goblin = goblin_normal_1.instance()
+		1:
+			new_goblin = goblin_normal_2.instance()
+		2:
+			new_goblin = goblin_normal_3.instance()
+		3:
+			new_goblin = goblin_rider_1.instance()
+		4:
+			new_goblin = goblin_rider_2.instance()
+		5:
+			new_goblin = goblin_rider_3.instance()
+		6:
+			new_goblin = goblin_flyer_1.instance()
+		7:
+			new_goblin = goblin_flyer_2.instance()
+		8:
+			new_goblin = goblin_flyer_3.instance()
+		9:
+			new_goblin = goblin_bomb_1.instance()
+		10:
+			new_goblin = goblin_bomb_2.instance()
+		11:
+			new_goblin = goblin_bomb_3.instance()
+	
+	if not new_goblin:
+		return
+	
 	add_child(new_goblin)
 	new_goblin.position = spawns[randi()%len(spawns)]
 	print(new_goblin.position)
