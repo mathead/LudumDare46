@@ -77,7 +77,6 @@ func take_lute():
 func take_trumpet():
 	spr_offset = 4
 
-	
 func _anim_idle():
 	_change_anim(0)
 	
