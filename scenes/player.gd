@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 onready var music_node = get_node("/root/Main/Music")
 
+onready var good_note_effect = preload("res://scenes/good_note_effect.tscn")
+onready var bad_note_effect = preload("res://scenes/bad_note_effect.tscn")
+
 var MAX_SPEED = 90
 var ACCELERATION = 2000
 var motion = Vector2.ZERO
@@ -31,7 +34,10 @@ func take_trumpet():
 	spr_offset = 4
 
 func _on_good_note(precision):
-	pass
+	var effect = good_note_effect.instance()
+	effect.position = position
+	add_child(effect)
+	
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
 			match spr_offset:
@@ -45,6 +51,10 @@ func _on_good_note(precision):
 					body.take_spear()
 
 func _on_bad_note():
+	var effect = bad_note_effect.instance()
+	effect.position = position
+	add_child(effect)
+	music_node.get_node("Shake").shake(0.3,100,0.5)
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
 			body.ear_anim()
