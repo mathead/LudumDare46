@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/goblin_1.png-89dfa2c50266bd2c0fcd0a866b658108.stex"
+path="res://.import/this_music_is_awful.png-9ca7e3dd66d6b2322624d0b133d618ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/goblins/goblin_1.png"
-dest_files=[ "res://.import/goblin_1.png-89dfa2c50266bd2c0fcd0a866b658108.stex" ]
+source_file="res://sprites/knights/this_music_is_awful.png"
+dest_files=[ "res://.import/this_music_is_awful.png-9ca7e3dd66d6b2322624d0b133d618ea.stex" ]
 
 [params]
 
@@ -20,11 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-<<<<<<< HEAD
 flags/filter=true
-=======
-flags/filter=false
->>>>>>> 20d55ab851f94154bd610cd7755430f72b761244
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
