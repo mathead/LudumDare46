@@ -9,10 +9,11 @@ var spr_offset = 0
 var hitting = false
 
 var mus_path = "res://sprites/musician/"
+var instruments = ["bagpipes","drum","harp","lute","trumpet"]
 var spr_frames = []
 
 func _ready():
-	for instr in ["bagpipes","drum","harp","lute","trumpet"]:
+	for instr in instruments:
 		spr_frames.append(load(mus_path + instr + "/idle.tres"))
 		spr_frames.append(load(mus_path + instr + "/run.tres"))
 		spr_frames.append(load(mus_path + instr + "/fight.tres"))
@@ -51,6 +52,8 @@ func get_input_axis():
 	
 	return axis.normalized()
 
+func get_instrument():
+	return instruments[spr_offset]
 
 func apply_friction(amount,delta):
 	if motion.length() > amount:

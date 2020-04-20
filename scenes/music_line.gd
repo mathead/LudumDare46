@@ -1,9 +1,10 @@
 extends Node2D
 
 var sheet
+var instrument = "bagpipes"
 var step = 0.0
-var steps_per_sec = 1
-var speedup = 0.01
+var steps_per_sec = 0.9
+var speedup = 0.0005
 var tolerance = 0.5
 var offset_correct_circle = 30
 var bad_sound = {
@@ -11,6 +12,10 @@ var bad_sound = {
 	"s": false,
 	"d": false,
 	"f": false,
+}
+var sheets = {
+	"harp": "a a a . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf",
+	"bagpipes": ". . . . f . f . df d df d sf . df d af . df d f . f . df d df d sf . af . sf . af . s . a . s . a . sdf . adf . sdf d adf d f . f . asdf . asdf . df d df d f . f .",
 }
 
 signal bad_note
@@ -27,18 +32,19 @@ const keymap = {
 
 func _ready():
 	set_process_input(true)
-	load_sheet("a a a . a s d f as ad . . sf . . . a s d f f d s a . . . . asdf asdf asdf asdf")
+	load_sheet(sheets[instrument])
 
 func _process(delta):
 	var last_step = int(step)
 	steps_per_sec *= 1 + speedup * delta
+	print(steps_per_sec)
 	step += steps_per_sec * delta
 	for i in range(last_step+line_length, int(step)+line_length):
 		create_notes(i)
 		
 	for key in "asdf":
 		if bad_sound[key]:
-			get_node("harp"+key).pitch_scale -= delta * (randf() - 0.5) * 5
+			get_node(instrument+key).pitch_scale -= delta * (randf() - 0.5) * 5
 		
 func _input(event):
 	if not is_music_press(event):
@@ -52,16 +58,19 @@ func _input(event):
 		emit_signal("bad_note")
 		play_bad_sound(letter)
 		
+func get_pitch():
+	return 0.7 * steps_per_sec
+		
 func play_good_sound(key):
-	var sound = get_node("harp"+key)
-	sound.pitch_scale = 1
+	var sound = get_node(instrument+key)
+	sound.pitch_scale = get_pitch()
 	bad_sound[key] = false
 	sound.play()
 
 func play_bad_sound(key):
-	var sound = get_node("harp"+key)
+	var sound = get_node(instrument+key)
 	bad_sound[key] = true
-	sound.pitch_scale += (randf() - 0.5) / 5
+	sound.pitch_scale = get_pitch() + (randf() - 0.5) / 5
 	sound.play()
 
 func is_music_press(event):

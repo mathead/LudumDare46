@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/music_line.gd" type="Script" id=1]
 [ext_resource path="res://gfx/note_line.png" type="Texture" id=2]
@@ -17,6 +17,10 @@
 [ext_resource path="res://sprites/notes/s.png" type="Texture" id=15]
 [ext_resource path="res://sprites/notes/f.png" type="Texture" id=16]
 [ext_resource path="res://scenes/scaleto1.gd" type="Script" id=17]
+[ext_resource path="res://sounds/bagpipess.wav" type="AudioStream" id=18]
+[ext_resource path="res://sounds/bagpipesa.wav" type="AudioStream" id=19]
+[ext_resource path="res://sounds/bagpipesd.wav" type="AudioStream" id=20]
+[ext_resource path="res://sounds/bagpipesf.wav" type="AudioStream" id=21]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 7.78454, -2.57286 )
@@ -45,6 +49,22 @@ script = ExtResource( 10 )
 position = Vector2( 140, 21 )
 texture = ExtResource( 2 )
 script = ExtResource( 11 )
+
+[node name="bagpipesa" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+volume_db = -10.0
+
+[node name="bagpipess" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+volume_db = -10.0
+
+[node name="bagpipesd" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+volume_db = -10.0
+
+[node name="bagpipesf" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+volume_db = -10.0
 
 [node name="harpa" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
