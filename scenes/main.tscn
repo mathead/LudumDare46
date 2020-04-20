@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Shake.gd" type="Script" id=2]
@@ -9,20 +9,26 @@
 [ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
 [ext_resource path="res://sprites/bg/grass_bg.png" type="Texture" id=8]
 [ext_resource path="res://scenes/bg/coach.tscn" type="PackedScene" id=9]
+[ext_resource path="res://gfx/joystix monospace.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://sprites/notes/bubble.png" type="Texture" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=2]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 23, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=3]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 46, 23, 23 )
 
 [sub_resource type="AtlasTexture" id=4]
+flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 69, 23, 23 )
 
@@ -51,6 +57,13 @@ _bundled = {
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 8.99915, 111.98 )
 
+[sub_resource type="DynamicFont" id=8]
+size = 10
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 10 )
+
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 goblin_normal_1 = ExtResource( 5 )
@@ -67,7 +80,7 @@ position = Vector2( 127.262, 7.54746 )
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 94.4671, 87.1119 )
+position = Vector2( 94.4671, 87.3758 )
 shape = SubResource( 7 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -98,3 +111,23 @@ position = Vector2( 127.526, 106.612 )
 
 [node name="Music" parent="." instance=ExtResource( 4 )]
 position = Vector2( 0, 184 )
+
+[node name="Textbox" type="Node2D" parent="."]
+position = Vector2( 124, 33.8295 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="bubble" type="Sprite" parent="Textbox"]
+position = Vector2( 37.0627, -52.8271 )
+texture = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Textbox"]
+margin_left = -43.5807
+margin_top = -66.6289
+margin_right = 118.419
+margin_bottom = -30.6289
+custom_fonts/font = SubResource( 8 )
+text = "play music to keep me alive"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
