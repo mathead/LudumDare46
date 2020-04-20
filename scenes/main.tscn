@@ -12,6 +12,50 @@
 [ext_resource path="res://sprites/bg/queen.png" type="Texture" id=10]
 [ext_resource path="res://sprites/bg/horse_idle_1.png" type="Texture" id=11]
 [ext_resource path="res://sprites/bg/horse_idle_3.png" type="Texture" id=12]
+[ext_resource path="res://scenes/goblins/general_goblin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprites/goblins/goblin_4.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 23, 23 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 23, 23, 23 )
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 46, 23, 23 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 7 )
+region = Rect2( 0, 69, 23, 23 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="PackedScene" id=6]
+_bundled = {
+"base_scene": 0,
+"conn_count": 0,
+"conns": PoolIntArray(  ),
+"editable_instances": [  ],
+"names": PoolStringArray( "Goblin", "frames", "frame", "health", "running_speed", "counter_weapon", "knockback_amount" ),
+"node_count": 1,
+"node_paths": [  ],
+"nodes": PoolIntArray( -1, -1, 2147483647, 0, -1, 6, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 0 ),
+"variants": [ ExtResource( 6 ), SubResource( 5 ), 0, 30, 10.0, 2, 2.0 ],
+"version": 2
+}
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 12 )
@@ -184,6 +228,7 @@ animations = [ {
 [node name="Main" type="Node2D"]
 script = ExtResource( 3 )
 goblin_normal_1 = ExtResource( 5 )
+goblin_rider_2 = SubResource( 6 )
 
 [node name="grass_bg" type="Sprite" parent="."]
 position = Vector2( 140.244, 89.5117 )
