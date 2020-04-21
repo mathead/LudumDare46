@@ -13,6 +13,7 @@ font_data = ExtResource( 2 )
 
 [node name="Textbox" type="Node2D"]
 pause_mode = 2
+visible = false
 position = Vector2( 146, 176 )
 z_index = 4096
 script = ExtResource( 3 )
