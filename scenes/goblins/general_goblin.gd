@@ -7,6 +7,7 @@ export var knockback_amount:float
 export var knockback_speed:float
 var hit_effect = preload("res://scenes/hit_effect.tscn")
 var start_spawn
+var dead_effect = preload("res://scenes/dead_effect.tscn")
 
 var knock_time = 0
 var knockback_multiplier = 5
@@ -20,7 +21,7 @@ func knockback():
 	add_child(hit_effect.instance())
 	health -= 1
 	if health <= 0:
-		var ef = hit_effect.instance()
+		var ef = dead_effect.instance()
 		ef.position = position
 		get_parent().add_child(ef)
 		queue_free()
