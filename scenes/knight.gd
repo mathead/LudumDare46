@@ -99,7 +99,7 @@ func dead_anim():
 	spr.position.x = 0
 	
 func heal():
-	health += 5
+	health += 20
 	
 func hit(damage):
 	if listening and not Textbox.shown_shield:

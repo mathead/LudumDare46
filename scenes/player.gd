@@ -49,6 +49,8 @@ func _on_good_note(precision):
 	
 	for body in sound_rad.get_overlapping_bodies():
 		if body.is_in_group("Knights"):
+			if get_instrument() == "harp":
+				body.heal()
 			body.listen_music()
 
 func _on_bad_note():
