@@ -15,13 +15,13 @@ var levels = [
 	{
 		0: [GOBLIN.normal],
 		5: [GOBLIN.normal],
-		12: [GOBLIN.bomb],
-		16: "Look out, it's a bomber goblin!",
-		17: 2, # bagpipes
-		17.1: "You need to change you musical style againts those. Pick up the bagpipes using spacebar and hit my knights with them to use their shield.",
-		30: [GOBLIN.bomb],
-		45: [GOBLIN.bomb],
-		60: [GOBLIN.normal],
+		12: [GOBLIN.normal],
+		30: [GOBLIN.normal],
+		45: [GOBLIN.normal],
+		60: [GOBLIN.bomb],
+		61: "Look out, it's a bomber goblin!",
+		62: 2, # bagpipes
+		62.1: "You need to change you musical style againts those. Pick up the bagpipes using spacebar and hit my knights with them to use their shield.",
 		85: [GOBLIN.bomb],
 		95: [GOBLIN.normal],
 		110: [GOBLIN.normal]
@@ -30,7 +30,8 @@ var levels = [
 		10: [GOBLIN.bomb],
 		20: [GOBLIN.bomb],
 		30: [GOBLIN.normal],
-		# TODO harp
+		32: 0, # harp
+		32.1: "Use the harp to heal and revive fallen knights.",
 		40: [GOBLIN.normal],
 		50: [GOBLIN.normal],
 		60: [GOBLIN.bomb],
@@ -67,7 +68,8 @@ var levels = [
 		5: [GOBLIN.bomb],
 		15: [GOBLIN.normal],
 		25: [GOBLIN.rider],
-		# TODO trumpet
+		27: 4, # trumpet
+		27.1: "Use the trumpet against those fast riders.",
 		40: [GOBLIN.normal],
 		50: [GOBLIN.normal],
 		65: [GOBLIN.rider],
@@ -120,7 +122,8 @@ var levels = [
 	},{
 		0: [GOBLIN.flyer],
 		5: [GOBLIN.flyer],
-		# TODO lute
+		7: 3, # lute
+		7.1: "Play the lute to switch to bows.",
 		10: [GOBLIN.rider],
 		20: [GOBLIN.rider],
 		25: [GOBLIN.flyer],
