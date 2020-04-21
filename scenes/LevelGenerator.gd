@@ -19,12 +19,12 @@ var levels = [
 		15: [GOBLIN.normal],
 		25: [GOBLIN.normal],
 		35: [GOBLIN.bomb],
-		61: "Look out, it's a bomber goblin!",
-		62: 2, # bagpipes
-		62.1: "You need to change you musical style againts those. Pick up the bagpipes using spacebar and hit my knights with them to use their shield.",
-		85: [GOBLIN.bomb],
-		95: [GOBLIN.normal],
-		110: [GOBLIN.normal]
+		39: "Look out, it's a bomber goblin!",
+		40: 2, # bagpipes
+		40.1: "You need to change you musical style againts those. Pick up the bagpipes using spacebar and hit my knights with them to use their shield.",
+		50: [GOBLIN.bomb],
+		65: [GOBLIN.normal],
+		75: [GOBLIN.normal]
 	},{
 		0: [GOBLIN.normal],
 		10: [GOBLIN.bomb],
