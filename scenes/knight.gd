@@ -91,7 +91,8 @@ func idle_anim():
 	_change_anim(0)
 	
 func fight_anim():
-	_change_anim(1)
+	if spr.frames != dead_frames and spr.frames != ear_frames:
+		_change_anim(1)
 	
 func dead_anim():
 	spr.frames = dead_frames
@@ -114,4 +115,14 @@ func _change_anim(offset):
 	if spr.frames != frames:
 		spr.frames = frames
 
+
+
+func _on_Area2D_area_entered(area):
+	if (area.is_in_group("Goblins")):
+		fight_anim()
+
+
+func _on_Area2D_area_exited(area):
+	if (area.is_in_group("Goblins")):
+		idle_anim()
 
