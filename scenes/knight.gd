@@ -31,21 +31,30 @@ func get_weapon()->String:
 	return weapons[spr_offset]
 
 func take_shield():
+	if health < 0:
+		return
 	spr_offset = 0
 	if listening:
 		idle_anim()
 	
 func take_sword():
+	if health < 0:
+		return
 	spr_offset = 1
 	if listening:
 		idle_anim()
 	
 func take_spear():
+	if health < 0:
+		return
 	spr_offset = 2
 	if listening:
 		idle_anim()
 	
 func take_bow():
+	
+	if health < 0:
+		return
 	spr_offset = 3
 	if listening:
 		idle_anim()
