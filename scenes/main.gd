@@ -70,7 +70,7 @@ func generate_goblin_spawns(height):
 		
 	var spawns = []
 	for side in [left_side,right_side]:
-		for y in range(0,height,24):
+		for y in range(40,height,24):
 			spawns.append(Vector2(side,y))
 	return spawns
 	
@@ -139,7 +139,7 @@ func generate_knights(height):
 	var right_side = width/3*2
 		
 	for side in [left_side,right_side]:
-		for y in range(0,height,24):
+		for y in range(40,height,24):
 			var new_knight = KNIGHT.instance()
 			add_child(new_knight)
 			new_knight.position = Vector2(side,y)
