@@ -33,7 +33,6 @@ radius = 5.0
 [node name="Goblin" type="AnimatedSprite"]
 position = Vector2( -0.137591, -0.0520582 )
 frames = SubResource( 5 )
-frame = 2
 playing = true
 offset = Vector2( 2, -8 )
 script = ExtResource( 2 )

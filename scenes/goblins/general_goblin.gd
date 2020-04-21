@@ -13,8 +13,12 @@ var knock_time = 0
 var knockback_multiplier = 5
 var state = "running"
 
+func _ready():
+	$Area.add_to_group("Goblins")
+
 func turn_around():
 	scale.x *= -1
+
 
 func knockback():
 	state = "knockback"
