@@ -67,10 +67,10 @@ func _process(delta):
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("Knights"):
 		if body.get_weapon() == counter_weapon:
-			if body.get_weapon() == "shield":
-				knockback_small()
-			elif state != "knockback":
+			if state != "knockback":
 				knockback()
+		elif body.get_weapon() == "shield": # shield counter_weapon is always false???
+				knockback() #_small()
 		else:
 			if body.health >= 0:
 				body.hit(10)
