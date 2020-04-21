@@ -51,6 +51,9 @@ func take_bow():
 		idle_anim()
 
 func dont_listen():
+	if health < 0:
+		return
+	
 	if not Textbox.bad_music:
 		Textbox.bad_music = true
 		Textbox.show_text("I can't listen to this!!! If you play like this, I'll lose my guard.")
@@ -60,6 +63,9 @@ func dont_listen():
 	spr.position.x = +3
 
 func listen_music():
+	if health < 0:
+		return
+	
 	listening = true
 	idle_anim()
 

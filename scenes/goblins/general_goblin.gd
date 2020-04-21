@@ -68,7 +68,7 @@ func _on_Area2D_body_entered(body):
 			knockback_small()
 		else:
 			if body.health >= 0:
-				body.hit(999)
+				body.hit(10)
 				knockback_small()
 	if body.is_in_group("queen"):
 		state = "killing_queen"
