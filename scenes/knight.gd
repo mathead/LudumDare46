@@ -119,10 +119,12 @@ func _change_anim(offset):
 
 func _on_Area2D_area_entered(area):
 	if (area.is_in_group("Goblins")):
-		fight_anim()
+		if listening:
+			fight_anim()
 
 
 func _on_Area2D_area_exited(area):
 	if (area.is_in_group("Goblins")):
-		idle_anim()
+		if listening:
+			idle_anim()
 
